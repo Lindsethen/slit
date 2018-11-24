@@ -63,6 +63,8 @@ nb-configuration.xml
 nbproject/project.properties
 build/web/WEB-INF/lib/mysql-connector-java-8.0.12.jar
 nbproject/build-impl.xml
+nbproject/build-impl.xml~
 nbproject/project.properties
 nbproject/project.xml
 nbproject/build-impl.xml
+nbproject/genfiles.properties
