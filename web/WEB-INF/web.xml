@@ -45,8 +45,8 @@
         <servlet-class>UserUtil.OverviewServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListModulesServlet</servlet-name>
-        <servlet-class>ModuleUtil.ListModulesServlet</servlet-class>
+        <servlet-name>ServletRequestContent</servlet-name>
+        <servlet-class>ModuleUtil.ServletRequestContent</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
@@ -84,6 +84,10 @@
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <url-pattern>/DeleteGoalsServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>EditModuleServlet</servlet-name>
+        <servlet-class>ModuleUtil.EditModuleServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>EditModuleServlet</servlet-name>
         <url-pattern>/EditModuleServlet</url-pattern>
@@ -93,8 +97,8 @@
         <url-pattern>/OverviewServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ListModulesServlet</servlet-name>
-        <url-pattern>/ListModulesServlet</url-pattern>
+        <servlet-name>ServletRequestContent</servlet-name>
+        <url-pattern>/ServletRequestContent</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
