@@ -12,23 +12,14 @@
 <body>
 <center>
     <h1>Filopplastning</h1>
-    <form method="post" action="UploadServlet"
+    <form method="post" action="FileUploadServlet"
         enctype="multipart/form-data">
         Velg hvilken fil du skal laste opp: <input type="file" name="file" size="60" /><br />
         <br /> <input type="submit" value="Last opp" />
     </form>
-    <%try {
-            String connectionURL = "jdbc:mysql://host/db";
-            Connection connection = null; 
-            Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-            connection = DriverManager.getConnection(connectionURL, "username", "password");
-            if(!connection.isClosed())
-                 out.println("Successfully connected to " + "MySQL server using TCP/IP...");
-            connection.close();
-        }catch(Exception ex){
-            out.println("Unable to connect to database"+ex);
-        }   
-    %>
+    <%{ 
+    
+        }%>
 </center>
 </body>
 </html>
