@@ -26,7 +26,7 @@
     </servlet>
     <servlet>
         <servlet-name>RegisterUserServlet</servlet-name>
-        <servlet-class>UserUtil.RegisterUser</servlet-class>
+        <servlet-class>UserUtil.RegisterUserServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteModuleServlet</servlet-name>
