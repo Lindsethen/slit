@@ -40,11 +40,13 @@ public class Login extends HttpServlet {
             }
             else
             {
-                response.sendRedirect("login.jsp"); 
-            {
-
-        }
+                if(uname.equals("student") && pass.equals("123")) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("username", uname);
+                    response.sendRedirect("welcome.jsp");
+                } else {
+                    response.sendRedirect("login.jsp");
+                }
+                }
     }
-    
-}
 }
