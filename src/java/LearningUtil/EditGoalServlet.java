@@ -3,27 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ModuleUtil;
+package LearningUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Statement;
-import java.sql.ResultSet;
-import java.sql.Connection;
 
 /**
  *
  * @author Ludamac
  */
-public class ListModulesServlet extends HttpServlet {
-    private Statement stmt = null;
+public class EditGoalServlet extends HttpServlet {
     private Connection conn = null;
+    private Statement stmt = null;
     private ResultSet rs = null;
-    
+    String nameString = null;
+    String stringString = null;
+  
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,41 +44,33 @@ public class ListModulesServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>List Modules</title>");            
+            out.println("<title>Servlet EditGoalServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ListModulesServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet EditGoalServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
-        //Lager query
-        String query = "SELECT * FROM MODULE ORDER BY m_name DESC;";
-        //Connect to db
-        conn = DbUtil.ConnectionManager.getConnection();
-        stmt = conn.createStatement();
-        //executer query
-        rs = stmt.executeQuery(query);
-        
-        //iterer gjennom hele listen 
-        while (rs.next())
-        {  
-           //lager ny printer med navn sqlWriter og skriver ut i HTML format 
-           PrintWriter sqlWriter = response.getWriter();
-           //hvilke columns som skal kalles hva (SQL -> Java)
-           String moduleName = rs.getString("m_name");
-           String moduleDescription = rs.getString("m_description");
-           // kjøres for hver row med følgende format:
-           sqlWriter.format("<h3>Name: %s</h3> Description %s</br>", moduleName, moduleDescription);
+            try{
+                //lager strings å sende til serveren
+                String nameString;
+                String stringString;
+                int goalID;
+                
+                //Henter info fra forrige side
+                nameString = request.getParameter("nameString");
+                stringString = request.getParameter("stringString");
+                goalID = Integer.parseInt("goalID");
+                
+                EditGoal eg = new EditGoal();
+                eg.changeGoalname(nameString, goalID);
+                eg.changeGoalstring(stringString, goalID);
+            }
+                catch (Exception e){
+                
+                System.out.println("Noe gikk galt.");
+                System.out.println(e);
+            }
         }
-        stmt.close();
-        }
-        catch (Exception e)
-        {
-            System.err.println("Got an exception!");
-            System.err.println(e.getMessage());
-        }
-        System.out.println("</body>");
-        System.out.println("</html>");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -40,7 +40,7 @@ public class ListUserServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ListUserServlet</title>");            
+            out.println("<title>Servlet ListUserServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>All users:</h1>");
@@ -51,7 +51,7 @@ public class ListUserServlet extends HttpServlet {
         stmt = conn.createStatement();
         //executer query
         rs = stmt.executeQuery(query);
-            
+
       // itererer gjennom hele listen (resultset rs)
             out.println("<ul>");
       while (rs.next())
@@ -82,7 +82,7 @@ public class ListUserServlet extends HttpServlet {
               System.err.println(e.getMessage());
             }
         }
-    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

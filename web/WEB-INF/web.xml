@@ -41,12 +41,16 @@
         <servlet-class>LearningUtil.ListGoalServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>OverviewServlet</servlet-name>
-        <servlet-class>UserUtil.OverviewServlet</servlet-class>
+        <servlet-name>EditModuleServlet</servlet-name>
+        <servlet-class>ModuleUtil.EditModuleServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletRequestContent</servlet-name>
-        <servlet-class>ModuleUtil.ServletRequestContent</servlet-class>
+        <servlet-name>EditGoalServlet</servlet-name>
+        <servlet-class>LearningUtil.EditGoalServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OverviewServlet</servlet-name>
+        <servlet-class>UserUtil.OverviewServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
@@ -84,21 +88,17 @@
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <url-pattern>/DeleteGoalsServlet</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>EditModuleServlet</servlet-name>
-        <servlet-class>ModuleUtil.EditModuleServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>EditModuleServlet</servlet-name>
         <url-pattern>/EditModuleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>OverviewServlet</servlet-name>
-        <url-pattern>/OverviewServlet</url-pattern>
+      <servlet-name>OverviewServlet</servlet-name>
+      <url-pattern>/OverviewServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletRequestContent</servlet-name>
-        <url-pattern>/ServletRequestContent</url-pattern>
+      <servlet-name>EditGoalServlet</servlet-name>
+      <url-pattern>/EditGoalServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
