@@ -63,11 +63,11 @@ public class ListGoalServlet extends HttpServlet {
         //lager ny printer med navn sqlWriter og skriver ut i HTML format
         PrintWriter sqlWriter = response.getWriter();
         //hvilke columns som skal kalles hva (SQL -> Java)
-        int id = rs.getInt("g_ID");
-        String goalName = rs.getString("g_Name");
-        String goalDesc = rs.getString("g_Desc");
+        int id = rs.getInt("lg_id");
+        String Name = rs.getString("lg_name");
+        String Description = rs.getString("lg_string");
         // kjøres for hver row med følgende format:
-        sqlWriter.format("<h3>ID: %s</h3> <h5>Name: %s</h5>  Desc: %s </br>", id, goalName, goalDesc);
+        sqlWriter.format("<h3>ID: %s</h3> <h5>Name: %s</h5>  Desc: %s </br>", id, Name, Description);
       }
             //lukker tilkoblingen
          stmt.close();
