@@ -65,9 +65,14 @@ public class ListUserServlet extends HttpServlet {
         String uEmail = rs.getString("u_email");
         String uRole = rs.getString("u_role");
         // kjøres for hver row med følgende format:
-        sqlWriter.format("<li>ID:%s</br> Role: %s <br> Name: %s %s", id, uRole, firstName, lastName);
+        sqlWriter.format("<li>ID:%s</br> Role: %s <br> Name: %s %s <br>Email:%s", id, uRole, firstName, lastName, uEmail);
+        sqlWriter.format("<br><form method=\"post\" action=\"DeleteUserServlet?UID=" + id +"\">");
+        sqlWriter.println("<input type=\"submit\" value=\"SLETT BRUKER\">");
+        sqlWriter.println("</form>");
       }
         out.println("</ul>");
+        out.println("</body>");
+        out.println("</html>");
       //lukker tilkoblingen
          stmt.close();
             } //henter og sender feilmeldinger. Foreløpig går de kun til console i IDE
@@ -76,8 +81,6 @@ public class ListUserServlet extends HttpServlet {
               System.err.println("Got an exception! ");
               System.err.println(e.getMessage());
             }
-            System.out.println("</body>");
-            System.out.println("</html>");
         }
     
 
