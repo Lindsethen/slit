@@ -8,11 +8,13 @@ import DbUtil.ConnectionManager;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author henlind
  */
+@WebServlet(name = "ListGoals", urlPatterns = {"/ListGoals"})
 public class ListGoals {
 private Connection conn = null;
         private Statement stmt = null;

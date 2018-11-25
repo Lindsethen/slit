@@ -36,6 +36,10 @@
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <servlet-class>LearningUtil.DeleteGoalsServlet</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>ListGoals</servlet>
+    <servlet-class>LearningUtil.ListGoals</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <url-pattern>/DeleteGoalsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListGoals</servlet-name>
+        <url-pattern>/ListGoals</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
