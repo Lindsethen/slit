@@ -53,6 +53,7 @@ public class ListUserServlet extends HttpServlet {
         rs = stmt.executeQuery(query);
             
       // itererer gjennom hele listen (resultset rs)
+            out.println("<ul>");
       while (rs.next())
       {
           //lager ny printer med navn sqlWriter og skriver ut i HTML format
@@ -64,8 +65,9 @@ public class ListUserServlet extends HttpServlet {
         String uEmail = rs.getString("u_email");
         String uRole = rs.getString("u_role");
         // kjøres for hver row med følgende format:
-        sqlWriter.format("<h3>ID: %s</h3> <h5>Role: %s</h5>  Name: %s %s </br>", id, uRole, firstName, lastName);
+        sqlWriter.format("<li>ID:%s</br> Role: %s <br> Name: %s %s", id, uRole, firstName, lastName);
       }
+        out.println("</ul>");
       //lukker tilkoblingen
          stmt.close();
             } //henter og sender feilmeldinger. Foreløpig går de kun til console i IDE
