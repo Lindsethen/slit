@@ -40,6 +40,10 @@
         <servlet-name>ListGoalServlet</servlet-name>
         <servlet-class>LearningUtil.ListGoalServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditModuleServlet</servlet-name>
+        <servlet-class>ModuleUtil.EditModuleServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
