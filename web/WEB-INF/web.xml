@@ -44,6 +44,10 @@
         <servlet-name>EditModuleServlet</servlet-name>
         <servlet-class>ModuleUtil.EditModuleServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditGoalServlet</servlet-name>
+        <servlet-class>LearningUtil.EditGoalServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -83,6 +87,10 @@
     <servlet-mapping>
         <servlet-name>EditModuleServlet</servlet-name>
         <url-pattern>/EditModuleServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditGoalServlet</servlet-name>
+        <url-pattern>/EditGoalServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
