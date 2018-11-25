@@ -5,21 +5,30 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>Edit Learning Goal</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h2> Which Learning goal would you like to edit? </h2>
-        <br>
-<form action="../EditGoal" method="post">
-    <input type="text" name="GID" placeholder="Learning goal ID">
+<head>
+    <title>Edit Learning Goal</title>
+</head>
+<body>
+<h2> Which Learning goal would you like to edit? </h2>
+<br>
+<form action="../EditGoalServlet" method="post">
+    <input type="text" name="goalID" placeholder="Learning goal ID">
+    <br>
+    <input type="text" name="lg_name" placeholder="Learnming goal name">
+    <br>
+    <input type="text" name="lg_string" placeholder="Learning goal description">
     <br>
     <input type="submit" value="submit">   
+    <br>
+    <br>
     <h4>
     <a href="../index.html">Back to index</a>
     </h4>
 </form>
 </body>
 </html>
+
+         <div>TODO write content</div>
+    </body>
+</html>
+
