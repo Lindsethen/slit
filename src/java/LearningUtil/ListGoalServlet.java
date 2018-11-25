@@ -7,6 +7,9 @@ package LearningUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +22,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ListGoalServlet", urlPatterns = {"/ListGoalServlet"})
 public class ListGoalServlet extends HttpServlet {
-
+        private Connection conn = null;
+        private Statement stmt = null;
+        private ResultSet rs = null;
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,6 +49,25 @@ public class ListGoalServlet extends HttpServlet {
             out.println("<h1>Servlet ListGoalServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+            //lager query
+             String query = "SELECT * FROM LEARNING ORDER BY g_Name DESC;";
+        //connect til db
+        conn = DbUtil.ConnectionManager.getConnection();
+        stmt = conn.createStatement();
+        //executer query
+        rs = stmt.executeQuery(query);
+        
+         // itererer gjennom hele listen (resultset rs)
+      while (rs.next())
+      {
+          //lager ny printer med navn sqlWriter og skriver ut i HTML format
+        PrintWriter sqlWriter = response.getWriter();
+        //hvilke columns som skal kalles hva (SQL -> Java)
+        int id = rs.getInt("g_id");
+        String;
+        String;
+        String;
+        String;
         }
     }
 
