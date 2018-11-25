@@ -25,7 +25,7 @@ public class EditGoal {
     
     newLearning = lg_string;
     lg_id = this.lg_id;
-    sqlQuery = "UPDATE MODULE SET Module = " + newLearning + " WHERE lg_id" + lg_id;
+    sqlQuery = "UPDATE LEARNING GOAL SET Learning = " + newLearning + " WHERE lg_id" + lg_id;
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
         //sender query til MYSQL
