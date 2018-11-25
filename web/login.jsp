@@ -12,7 +12,7 @@
         <title>Insert title here</title>
     </head>
     <body>
-        <form action="Login">
+        <form action="LoginServlet">
             Enter username : <input type="text" name="uname"><br>
             Enter password : <input type="password" name="pass"><br>
             <input type="submit" value="login">

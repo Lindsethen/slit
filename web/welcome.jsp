@@ -21,9 +21,10 @@
         %>
           Welcome ${username}
 
-          <a href="aboutus.jsp">About Us, Click Here</a>
+          <a href="videos.jsp"> Vil du ha et visdomsord?</a>
     
-          <form action="Logout">
+          <form action="LogoutServlet">
+              
               <input type="submit" value="Logout">
           
           </form>

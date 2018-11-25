@@ -18,9 +18,12 @@ import javax.servlet.http.HttpSession;
  *
  * @author josteinvagarygg
  */
-@WebServlet(name ="Login", urlPatterns = {"/Login"})
+@WebServlet(name ="LoginServlet")
 public class Login extends HttpServlet {
 
+    
+    
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -37,13 +40,11 @@ public class Login extends HttpServlet {
             }
             else
             {
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("login.jsp"); 
             {
 
         }
     }
-
-
-    }
-
-    }
+    
+}
+}
