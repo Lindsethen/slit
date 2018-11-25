@@ -30,32 +30,34 @@ and open the template in the editor.
 </style>
 
 
-    <title>Register user</title>
+    <title>New learning goal</title>
 </head>
 <body>
     <div class="container">
-<h1>Please input module data</h1>
+<h1>Please input learning goal data</h1>
     </div>
 <br>
 <div class="jumbotron">
-<form action="../NewModuleServlet" method="post">
-    <input type="text" name="mName" placeholder="Module name">
+<form action="../NewLearninGoalServlet" method="post">
+    <input type="text" name="lgNum" placeholder="Module number">
     <br>
-    <input type="text" name="mDesc" placeholder="Module description">
+    <input type="text" name="lgName" placeholder="Module name">
+    <br>
+    <input type="text" name="lgDesc" placeholder="Module description">
     <br>
     <input type="submit" value="submit">
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <a href="../index.html" class="text-white">Tilbake til index</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="../index.html" class="text-white">Tilbake til index</a>
 </div>
 
 
 
+    </body>
 
-  <!-- Optional JavaScript -->
+      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserUtil;
+package ModuleUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author matjo
  */
-public class ListUserServlet extends HttpServlet {
+public class ListModuleServlet extends HttpServlet {
         private Connection conn = null;
         private Statement stmt = null;
         private ResultSet rs = null;
@@ -43,9 +43,9 @@ public class ListUserServlet extends HttpServlet {
             out.println("<title>Servlet ListUserServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>All users:</h1>");
+            out.println("<h1>Alle moduler:</h1>");
             //lager query
-        String query = "SELECT * FROM USER ORDER BY u_lname DESC;";
+        String query = "SELECT m_id, m_name, m_deadline, m_description FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
         //connect til db
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
@@ -55,21 +55,20 @@ public class ListUserServlet extends HttpServlet {
       // itererer gjennom hele listen (resultset rs)
             out.println("<ul>");
       while (rs.next())
-      {
-          //lager ny printer med navn sqlWriter og skriver ut i HTML format
-        PrintWriter sqlWriter = response.getWriter();
-        //hvilke columns som skal kalles hva (SQL -> Java)
-        int id = rs.getInt("u_id");
-        String firstName = rs.getString("u_fname");
-        String lastName = rs.getString("u_lname");
-        String uEmail = rs.getString("u_email");
-        String uRole = rs.getString("u_role");
-        // kjøres for hver row med følgende format:
-        sqlWriter.format("<li>ID:%s</br> Role: %s <br> Name: %s %s <br>Email:%s", id, uRole, firstName, lastName, uEmail);
-        sqlWriter.format("<br><form method=\"post\" action=\"DeleteUserServlet?UID=" + id +"\">");
-        sqlWriter.println("<input type=\"submit\" value=\"SLETT BRUKER\">");
-        sqlWriter.println("</form>");
-      }
+        {
+            //lager ny printer med navn sqlWriter og skriver ut i HTML format
+          PrintWriter sqlWriter = response.getWriter();
+          //hvilke columns som skal kalles hva (SQL -> Java)
+          int id = rs.getInt("m_id");
+          String mName = rs.getString("m_name");
+          String mDesc = rs.getString("m_description");
+          String mDeadline = rs.getString("m_deadline");
+          // kjøres for hver row med følgende format:
+          sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s", id, mName, mDesc, mDeadline);
+          sqlWriter.format("<br><form method=\"post\" action=\"DeleteModuleServlet?UID=" + id +"\">");
+          sqlWriter.println("<input type=\"submit\" value=\"SLETT MODUL\">");
+          sqlWriter.println("</form>");
+        } 
         out.println("</ul>");
         out.println("</body>");
         out.println("</html>");
