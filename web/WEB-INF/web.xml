@@ -79,7 +79,6 @@
     <servlet-mapping>
         <servlet-name>EditModuleServlet</servlet-name>
         <url-pattern>/EditModuleServlet</url-pattern>
-    </servlet-mappping>
     </servlet-mapping>
     <session-config>
         <session-timeout>
