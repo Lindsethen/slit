@@ -82,8 +82,9 @@
         <url-pattern>/DeleteGoalsServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ListGoalServlet</servlet-name>
-        <url-pattern>/ListGoalServlet</url-pattern>
+        <servlet-name>EditModuleServlet</servlet-name>
+        <url-pattern>/EditModuleServlet</url-pattern>
+    </servlet-mappping>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OverviewServlet</servlet-name>
