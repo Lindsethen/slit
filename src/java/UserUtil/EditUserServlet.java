@@ -23,7 +23,6 @@ public class EditUserServlet extends HttpServlet {
     private Connection conn = null;
     private Statement stmt = null;
     private ResultSet rs = null;
-    String mailString = null;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
