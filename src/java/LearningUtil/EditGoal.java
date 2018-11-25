@@ -8,6 +8,7 @@ package LearningUtil;
 import java.sql.Connection;
 import java.sql.Statement;
 
+
 /**
  *
  * @author henlind
@@ -26,6 +27,7 @@ public class EditGoal {
     newLearning = lg_string;
     lg_id = this.lg_id;
     sqlQuery = "UPDATE LEARNING GOAL SET Learning = " + newLearning + " WHERE lg_id" + lg_id;
+    try {
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
         //sender query til MYSQL
@@ -37,4 +39,5 @@ public class EditGoal {
         }
     }
 }
+
 
