@@ -29,7 +29,7 @@ public class NewLearningServlet extends HttpServlet {
             int g_ID;
             
             //Henter info fra forrige side
-            idString = request.getParameter("lgNum");
+            idString = request.getParameter("g_ID");
             g_Name = request.getParameter("g_Name");
             g_Desc = request.getParameter("g_Desc");
             //Gjør om string til int
