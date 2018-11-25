@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author matjo
+ * @author henlind
  */
 @WebServlet(name = "ListGoalServlet", urlPatterns = {"/ListGoalServlet"})
 public class ListGoalServlet extends HttpServlet {
@@ -63,7 +63,7 @@ public class ListGoalServlet extends HttpServlet {
           //lager ny printer med navn sqlWriter og skriver ut i HTML format
         PrintWriter sqlWriter = response.getWriter();
         //hvilke columns som skal kalles hva (SQL -> Java)
-        int id = rs.getInt("g_id");
+        int id = rs.getInt("g_ID");
         String;
         String;
         String;
