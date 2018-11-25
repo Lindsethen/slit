@@ -21,9 +21,9 @@ public class EditGoal {
     String sqlQuery;
     int lg_id;
    
-    public void changeGoal(String ModuleString, int lg_id){
+    public void changeGoal(String lg_string, int lg_id){
     
-    newLearning = ModuleString;
+    newLearning = lg_string;
     lg_id = this.lg_id;
     sqlQuery = "UPDATE MODULE SET Module = " + newLearning + " WHERE lg_id" + lg_id;
         conn = DbUtil.ConnectionManager.getConnection();
