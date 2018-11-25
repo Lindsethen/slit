@@ -56,6 +56,10 @@
         <servlet-name>EditUserServlet</servlet-name>
         <servlet-class>UserUtil.EditUserServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploaderServlet</servlet-name>
+        <servlet-class>UploaderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -107,6 +111,10 @@
     <servlet-mapping>
         <servlet-name>ServletRequestContent</servlet-name>
         <url-pattern>/ServletRequestContent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploaderServlet</servlet-name>
+        <url-pattern>/UploaderServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
