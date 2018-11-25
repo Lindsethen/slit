@@ -11,7 +11,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author matjo
+ * @author henlind
  */
 public class ListGoals {
 private Connection conn = null;
