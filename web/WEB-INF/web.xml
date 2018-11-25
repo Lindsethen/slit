@@ -52,6 +52,10 @@
         <servlet-name>ServletRequestContent</servlet-name>
         <servlet-class>ModuleUtil.ServletRequestContent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditUserServlet</servlet-name>
+        <servlet-class>UserUtil.EditUserServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
