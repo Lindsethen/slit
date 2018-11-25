@@ -26,14 +26,14 @@ public class NewLearningServlet extends HttpServlet {
             String idString;
             String lg_name;
             String lg_string;
-            int g_ID;
+            int lg_ID;
             
             //Henter info fra forrige side
             idString = request.getParameter("lg_id");
             lg_name = request.getParameter("lg_name");
             lg_string = request.getParameter("lg_string");
             //Gjør om string til int
-            g_ID = Integer.parseInt(idString); 
+            lg_ID = Integer.parseInt(idString); 
             //Printer pynt
             out.print("Data retrieved about: " + lg_name +"!");
             out.print("<br>");
@@ -44,7 +44,7 @@ public class NewLearningServlet extends HttpServlet {
             NewLearning dbtool = new NewLearning();
             //logIn(out) skriver ut ex fra DbUtil
             dbtool.logIn(out);
-            dbtool.newLearning(g_ID, lg_name, lg_string, out);
+            dbtool.newLearning(lg_ID, lg_name, lg_string, out);
             dbtool.commit();
             dbtool.close();
 

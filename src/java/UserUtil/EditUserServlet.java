@@ -24,6 +24,8 @@ public class EditUserServlet extends HttpServlet {
     private Statement stmt = null;
     private ResultSet rs = null;
     String mailString = null;
+    String fnameString = null;
+    String lnameString = null;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -58,7 +60,8 @@ public class EditUserServlet extends HttpServlet {
             
                 EditUser eu = new EditUser();
                 eu.changeEmail(mailString, userID);
-            } catch (Exception e){
+            } 
+                catch (Exception e){
                 
                 System.out.println("Noe gikk galt.");
                 System.out.println(e);
