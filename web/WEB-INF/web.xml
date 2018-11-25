@@ -84,6 +84,10 @@
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <url-pattern>/DeleteGoalsServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>EditModuleServlet</servlet-name>
+        <servlet-class>ModuleUtil.EditModuleServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>EditModuleServlet</servlet-name>
         <url-pattern>/EditModuleServlet</url-pattern>

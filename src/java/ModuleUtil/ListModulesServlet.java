@@ -7,9 +7,6 @@ package ModuleUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,11 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ludamac
  */
-public class EditModuleServlet extends HttpServlet {
-    private Connection conn = null;
-    private Statement stmt = null;
-    private ResultSet rs = null;
-    String moduleString = null;
+public class ListModulesServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,28 +35,12 @@ public class EditModuleServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EditModuleServlet</title>");            
+            out.println("<title>Servlet ListModulesServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet EditModuleServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ListModulesServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            try {
-                //Lage strings og sender til serveren
-            String moduleString;
-            int ModuleID;
-                    //Henter infro fra EditModule siden
-            moduleString = request.getParameter("moduleString");
-            ModuleID = Integer.parseInt("ModuleID");
-            
-                EditModule em = new EditModule();
-                em.changeModule(moduleString, ModuleID);
-            }
-            catch (Exception e){
-                    System.out.println("Noe gikk galt.");
-                    System.out.println(e);
-                    
-            }
         }
     }
 
