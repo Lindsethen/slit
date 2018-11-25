@@ -14,7 +14,6 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author henlind
  */
-@WebServlet(name = "ListGoals", urlPatterns = {"/ListGoals"})
 public class ListGoals {
 private Connection conn = null;
         private Statement stmt = null;
