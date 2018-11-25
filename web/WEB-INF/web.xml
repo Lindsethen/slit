@@ -44,6 +44,10 @@
         <servlet-name>OverviewServlet</servlet-name>
         <servlet-class>UserUtil.OverviewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletRequestContent</servlet-name>
+        <servlet-class>ModuleUtil.ServletRequestContent</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>OverviewServlet</servlet-name>
         <url-pattern>/OverviewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRequestContent</servlet-name>
+        <url-pattern>/ServletRequestContent</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
