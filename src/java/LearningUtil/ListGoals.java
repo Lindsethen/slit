@@ -28,12 +28,12 @@ private Connection conn = null;
       // iterate through the java resultset
       while (rs.next())
       {
-        int id = rs.getInt("g_id");
-        String gName = rs.getString("g_Name");
-        String gDesc = rs.getString("g_desc");
+        int id = rs.getInt("g_ID");
+        String g_Name = rs.getString("g_Name");
+        String g_Desc = rs.getString("g_desc");
         
         // print the results
-        System.out.format("%s, %s, %s\n", id, gName, gDesc);
+        System.out.format("%s, %s, %s\n", id, g_Name, g_Desc);
       }
          stmt.close();
             }
