@@ -26,6 +26,7 @@
     </servlet>
     <servlet>
         <servlet-name>RegisterUserServlet</servlet-name>
+        <servlet-class>UserUtil.RegisterUser</servlet-class>
         <seservlet-class>UserUtil.RegisterUser</seservlet-class>
     </servlet>
     <servlet>
@@ -35,6 +36,10 @@
     <servlet>
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <servlet-class>LearningUtil.DeleteGoalsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListGoalServlet</servlet-name>
+        <servlet-class>LearningUtil.ListGoalServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
@@ -71,6 +76,10 @@
     <servlet-mapping>
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <url-pattern>/DeleteGoalsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListGoalServlet</servlet-name>
+        <url-pattern>/ListGoalServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
