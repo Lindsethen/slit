@@ -27,6 +27,7 @@
     <servlet>
         <servlet-name>RegisterUserServlet</servlet-name>
         <servlet-class>UserUtil.RegisterUser</servlet-class>
+        <seservlet-class>UserUtil.RegisterUser</seservlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteModuleServlet</servlet-name>
@@ -39,6 +40,10 @@
     <servlet>
         <servlet-name>ListGoalServlet</servlet-name>
         <servlet-class>LearningUtil.ListGoalServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OverviewServlet</servlet-name>
+        <servlet-class>UserUtil.OverviewServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
@@ -80,9 +85,11 @@
         <servlet-name>ListGoalServlet</servlet-name>
         <url-pattern>/ListGoalServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OverviewServlet</servlet-name>
+        <url-pattern>/OverviewServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>
