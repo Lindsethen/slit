@@ -21,6 +21,9 @@
         <servlet-class>UserUtil.DeleteUserServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <servlet-class>ModuleUtil.FileUploadServlet</servlet-class>
+    <servlet>
         <servlet-name>EditUserServlet</servlet-name>
         <servlet-class>UserUtil.EditUserServlet</servlet-class>
     </servlet>
@@ -108,3 +111,4 @@
         <session-timeout>30</session-timeout>
     </session-config>
 </web-app>
+</servlet>
