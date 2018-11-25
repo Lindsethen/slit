@@ -64,7 +64,7 @@ public class ListUserServlet extends HttpServlet {
         String uEmail = rs.getString("u_email");
         String uRole = rs.getString("u_role");
         // kjøres for hver row med følgende format:
-        sqlWriter.format("<h3>ID: %s</h3> <h5>Role: %s</h5>  Name: %s %s </br>", id, uRole, firstName, lastName);
+        sqlWriter.format("<h3>ID: %s</h3> <h5>Role: %s</h5>  Name: %s %s </br>", id, uRole, firstName, lastName, uEmail);
       }
       //lukker tilkoblingen
          stmt.close();
