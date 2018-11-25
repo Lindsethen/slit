@@ -29,11 +29,11 @@ private Connection conn = null;
       while (rs.next())
       {
         int id = rs.getInt("lg_id");
-        String Name = rs.getString("lg_name");
-        String Description = rs.getString("lg_string);
+        String name = rs.getString("lg_name");
+        String desc = rs.getString("lg_string");
         
         // print the results
-        System.out.format("%s, %s, %s\n", id, Name, Description);
+        System.out.format("%s, %s, %s\n", id, name, desc);
       }
          stmt.close();
             }
