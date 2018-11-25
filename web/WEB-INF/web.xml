@@ -40,6 +40,10 @@
         <servlet-name>ListGoalServlet</servlet-name>
         <servlet-class>LearningUtil.ListGoalServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OverviewServlet</servlet-name>
+        <servlet-class>UserUtil.OverviewServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -77,12 +81,14 @@
         <url-pattern>/DeleteGoalsServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ListGoalServlet</servlet-name>
-        <url-pattern>/ListGoalServlet</url-pattern>
+        <servlet-name>EditModuleServlet</servlet-name>
+        <url-pattern>/EditModuleServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OverviewServlet</servlet-name>
+        <url-pattern>/OverviewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>

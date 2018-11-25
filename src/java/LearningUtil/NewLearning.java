@@ -31,8 +31,8 @@ public class NewLearning {
         }
     }
 
-    public void newLearning(int gId, String gName, String gDesc, PrintWriter out){
-        String strInsert = "Insert into goals (g_id, g_name,  g_string) values ('" +gId + "', '" +gName + "', '" +gDesc  +"')";
+    public void newLearning(int g_ID, String g_Name, String g_Desc, PrintWriter out){
+        String strInsert = "Insert into goals (g_ID, g_Name,  g_Desc) values ('" +g_ID + "', '" +g_Name + "', '" +g_Desc  +"')";
         out.println(strInsert);
 
         try {
@@ -67,3 +67,4 @@ public class NewLearning {
         }
     }
 }
+
