@@ -28,7 +28,7 @@ public void changeEmail(String mailString, int userID){
             //Sender query til MySQL
             stmt.executeUpdate(sqlQuery);
             }
-            catch (Exception ex) {
+            catch (SQLException ex) {
                 System.out.println("Noe gikk galt:");
                 System.out.println(ex);
             }
