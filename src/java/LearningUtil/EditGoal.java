@@ -17,7 +17,7 @@ public class EditGoal {
         String newString;
         String sqlQuery;
         int goalID;
-        
+
 public void changeGoalname(String nameString, int goalID){
     newName = nameString;
     goalID = this.goalID;
@@ -46,5 +46,5 @@ public void changeGoalstring(String stringString, int goalID){
         System.out.println(ex);
     }
 }
-                
+
 }
