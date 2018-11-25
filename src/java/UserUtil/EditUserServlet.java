@@ -60,6 +60,8 @@ public class EditUserServlet extends HttpServlet {
             
                 EditUser eu = new EditUser();
                 eu.changeEmail(mailString, userID);
+                eu.changeFname(fnameString, userID);
+                eu.changeLname(lnameString, userID);
             } 
                 catch (Exception e){
                 
