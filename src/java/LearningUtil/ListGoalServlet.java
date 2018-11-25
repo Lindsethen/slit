@@ -57,34 +57,30 @@ public class ListGoalServlet extends HttpServlet {
         //executer query
         rs = stmt.executeQuery(query);
         
-         // itererer gjennom hele listen (resultset rs)
-      while (rs.next())
+        // itererer gjennom hele listen (resultset rs)
+            while (rs.next())
       {
-          //lager ny printer med navn sqlWriter og skriver ut i HTML format
+        //lager ny printer med navn sqlWriter og skriver ut i HTML format
         PrintWriter sqlWriter = response.getWriter();
         //hvilke columns som skal kalles hva (SQL -> Java)
         int id = rs.getInt("g_ID");
-        String;
-        String;
-        String;
-        String;
+        String goalName = rs.getString("g_Name");
+        String goalDesc = rs.getString("g_Desc");
+        // kjøres for hver row med følgende format:
+        sqlWriter.format("<h3>ID: %s</h3> <h5>Name: %s</h5>  Desc: %s </br>", id, goalName, goalDesc);
+      }
+            //lukker tilkoblingen
+         stmt.close();
+            } //henter og sender feilmeldinger. Foreløpig går de kun til console i IDE
+            catch (Exception e)
+            {
+              System.err.println("Got an exception! ");
+              System.err.println(e.getMessage());
+            }
+            System.out.println("</body>");
+            System.out.println("</html>");
         }
-    }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
     /**
      * Handles the HTTP <code>POST</code> method.
