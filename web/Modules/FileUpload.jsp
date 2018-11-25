@@ -9,10 +9,10 @@
 </head>
 <body>
 <center>
-    <h1>File Upload</h1>
+    <h1>Filopplastning</h1>
     <form method="post" action="UploadServlet"
         enctype="multipart/form-data">
-        Select file to upload: <input type="file" name="file" size="60" /><br />
+        Velg hvilken fil du skal laste opp: <input type="file" name="file" size="60" /><br />
         <br /> <input type="submit" value="Upload" />
     </form>
 </center>

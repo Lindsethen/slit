@@ -93,6 +93,10 @@
         <url-pattern>/EditModuleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <url-pattern>/FileUploadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>OverviewServlet</servlet-name>
         <url-pattern>/OverviewServlet</url-pattern>
     </servlet-mapping>
