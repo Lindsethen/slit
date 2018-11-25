@@ -5,10 +5,35 @@
  */
 package LearningUtil;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 /**
  *
- * @author matjo
+ * @author henlind
  */
 public class EditGoal {
         
+    
+    private Connection conn = null;
+    private Statement stmt = null;
+    String newLearning;
+    String sqlQuery;
+    int lg_id;
+   
+    public void changeGoal(String ModuleString, int lg_id){
+    
+    newLearning = ModuleString;
+    lg_id = this.lg_id;
+    sqlQuery = "UPDATE MODULE SET Module = " + newLearning + " WHERE lg_id" + lg_id;
+        conn = DbUtil.ConnectionManager.getConnection();
+        stmt = conn.createStatement();
+        //sender query til MYSQL
+        stmt.executeUpdate(sqlQuery);
+    }
+        catch (Exception ex) {
+            System.out.println("Noe gikk galt:");
+            System.out.println(ex);
+        }
+    }
 }
