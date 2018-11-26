@@ -89,7 +89,7 @@ public class UploadHandin extends HttpServlet {
             request.setAttribute("Message", message);
              
             // forwards to the message page
-            getServletContext().getRequestDispatcher("/Message.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Student/Handins/Message.jsp").forward(request, response);
         }
     }
 }
