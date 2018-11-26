@@ -68,6 +68,10 @@
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>LearningUtil.NewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HandinOverviewServlet</servlet-name>
+        <servlet-class>HandinUtil.OverviewServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -129,9 +133,12 @@
         <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-=======<servlet-name>LoginServlet</servlet-name>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HandinOverviewServlet</servlet-name>
+        <url-pattern>/HandinOverviewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
