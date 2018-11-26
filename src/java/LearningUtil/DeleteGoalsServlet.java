@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ModuleUtil;
+package LearningUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,19 +11,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Statement;
-import java.sql.ResultSet;
-import java.sql.Connection;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author Ludamac
  */
-public class ListModulesServlet extends HttpServlet {
-    private Statement stmt = null;
-    private Connection conn = null;
-    private ResultSet rs = null;
-    
+@WebServlet(name = "DeleteGoalsServlet", urlPatterns = {"/DeleteGoalsServlet"})
+
+public class DeleteGoalsServlet extends HttpServlet {
+int goalID;
+String idString = null;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,45 +35,22 @@ public class ListModulesServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            idString = request.getParameter("GID");
+            goalID = Integer.parseInt(idString);
+            //kjører DeleteModules.deleteID med int goalID som parameter. =new fordi deleteID er en statisk funksjon
+            DeleteGoals delClass = new DeleteGoals();
+            delClass.deleteGoal(goalID);
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>List Modules</title>");            
+            out.println("<title>Delete learning goal</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ListModulesServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Delete learning goal at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
-        //Lager query
-        String query = "SELECT * FROM MODULE ORDER BY m_name DESC;";
-        //Connect to db
-        conn = DbUtil.ConnectionManager.getConnection();
-        stmt = conn.createStatement();
-        //executer query
-        rs = stmt.executeQuery(query);
-        
-        //iterer gjennom hele listen 
-        while (rs.next())
-        {  
-           //lager ny printer med navn sqlWriter og skriver ut i HTML format 
-           PrintWriter sqlWriter = response.getWriter();
-           //hvilke columns som skal kalles hva (SQL -> Java)
-           String moduleName = rs.getString("m_name");
-           String moduleDescription = rs.getString("m_description");
-           // kjøres for hver row med følgende format:
-           sqlWriter.format("<h3>Name: %s</h3> Description %s</br>", moduleName, moduleDescription);
         }
-        stmt.close();
-        }
-        catch (Exception e)
-        {
-            System.err.println("Got an exception!");
-            System.err.println(e.getMessage());
-        }
-        System.out.println("</body>");
-        System.out.println("</html>");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

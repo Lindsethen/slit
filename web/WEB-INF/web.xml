@@ -26,7 +26,7 @@
     </servlet>
     <servlet>
         <servlet-name>RegisterUserServlet</servlet-name>
-        <servlet-class>UserUtil.RegisterUser</servlet-class>
+        <servlet-class>UserUtil.RegisterUserServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteModuleServlet</servlet-name>
@@ -41,12 +41,32 @@
         <servlet-class>LearningUtil.ListGoalServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>EditModuleServlet</servlet-name>
+        <servlet-class>ModuleUtil.EditModuleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditGoalServlet</servlet-name>
+        <servlet-class>LearningUtil.EditGoalServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>OverviewServlet</servlet-name>
         <servlet-class>UserUtil.OverviewServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletRequestContent</servlet-name>
-        <servlet-class>ModuleUtil.ServletRequestContent</servlet-class>
+        <servlet-name>ListModuleServlet</servlet-name>
+        <servlet-class>ModuleUtil.ListModuleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>Systemlogin.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Systemlogin.Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>LearningUtil.NewServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
@@ -84,10 +104,6 @@
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <url-pattern>/DeleteGoalsServlet</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>EditModuleServlet</servlet-name>
-        <servlet-class>ModuleUtil.EditModuleServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>EditModuleServlet</servlet-name>
         <url-pattern>/EditModuleServlet</url-pattern>
@@ -97,12 +113,25 @@
         <url-pattern>/OverviewServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletRequestContent</servlet-name>
-        <url-pattern>/ServletRequestContent</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>EditGoalServlet</servlet-name>
         <url-pattern>/EditGoalServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListModuleServlet</servlet-name>
+        <url-pattern>/ListModules</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+=======<servlet-name>LoginServlet</servlet-name>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

@@ -33,37 +33,41 @@ and open the template in the editor.
         <title>SLIT</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="refresh" content="0; url=login.jsp">
     </head>
     <body>
-        
      <div class="container">
-       <h1>Alt_Ctrl SLIT</h1>
+       <h1>Velkommen til SLIT</h1>
+       <%
+            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+            if (session.getAttribute("username")==null)
+            {
+                response.sendRedirect("login.jsp");
+            }
+
+        %>
+           Velkommen ${username}
      </div>
         <br>
         <div class="jumbotron">
 
-            <a href="Teacher" class ="text-white">Lærerside</a>
+            <a href="Modules" class ="text-white">Moduler</a>
             &nbsp;
             &nbsp;
             &nbsp;
-            <a href="Student" class = "text-white">Studentside</a>
+            <a href="Handins" class = "text-white">Handins</a>
             &nbsp;
             &nbsp;
             &nbsp;
-            <a href="LearningGoals" class = "text-white">Administrer læremål</a>
-             
-            
+            <a href="Class" class = "text-white">Klasse</a>
+
         </div>
+
             <form action="../LogoutServlet">
-              
+
               <input type="submit" value="Logout">
-          
-            </form>   
-                
-        
-        
-        
+
+            </form>
+
     </body>
 
   <!-- Optional JavaScript -->

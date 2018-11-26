@@ -32,7 +32,7 @@ public class NewModule {
     }
 
     public void newModule(String mName, String mDesc, PrintWriter out){
-        String strInsert = "Insert into module (m_name,  m_description) values ('" +mName + "', '" +mDesc + "')";
+        String strInsert = "INSERT INTO MODULE (m_name,  m_description) values ('" +mName + "', '" +mDesc + "')";
         out.println(strInsert);
 
         try {
@@ -48,8 +48,9 @@ public class NewModule {
 
         try {
             conn.commit();
-        } // end try
-
+        } 
+        // end try
+        
         catch (SQLException ex) {
             System.out.println("Ikke close DB " +ex);
 

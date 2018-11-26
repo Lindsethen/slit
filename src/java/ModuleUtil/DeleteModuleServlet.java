@@ -39,9 +39,9 @@ int ModuleID;
         response.setContentType("text/html;charset=UTF-8");
         //starter HTML Skriving / Lager printwriter som kalles ".out"
         try (PrintWriter out = response.getWriter()) {
-            //Henter ID fra forrige side (/user/deleteuser.html) og gjør om til int fra string
+            //Henter ID fra forrige side (/user/deleteModule.html) og gjør om til int fra string
             String idString = request.getParameter("UID");
-            int ModuleID = Integer.parseInt(idString);
+            ModuleID = Integer.parseInt(idString);
             //kjører DeleteModules.deleteID med int ModuleID som parameter. =new fordi deleteID er en statisk funksjon
             DeleteModules delClass = new DeleteModules();
             delClass.deleteID(ModuleID);
@@ -53,7 +53,6 @@ int ModuleID;
             out.println("</head>");
             out.println("<body>");
             out.println("Slettet modul nummer " +idString);
-            out.println("<h1>Servlet DeleteModulesServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

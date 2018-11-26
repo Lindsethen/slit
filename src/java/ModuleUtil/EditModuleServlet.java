@@ -27,6 +27,7 @@ public class EditModuleServlet extends HttpServlet {
     String descriptionString = null;
     String deadlineString = null;
     String nameString = null;
+    int ModuleID;
     
 
     /**
@@ -53,10 +54,9 @@ public class EditModuleServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
             try {
-                //Lage strings og sender til serveren
-            String ModuleString;
-            int ModuleID;
-                    //Henter infro fra EditModule siden
+
+            
+                    //Henter info fra EditModule siden
             moduleString = request.getParameter("moduleString");
             descriptionString = request.getParameter("descriptionString");
             deadlineString = request.getParameter("deadlineString");
@@ -68,6 +68,7 @@ public class EditModuleServlet extends HttpServlet {
                 em.changeDescription(descriptionString, ModuleID);
                 em.changeDeadline(deadlineString, ModuleID);
                 em.changeName(nameString, ModuleID);
+                
             }
             catch (Exception e){
                     System.out.println("Noe gikk galt.");

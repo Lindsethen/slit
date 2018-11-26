@@ -40,7 +40,7 @@ public class ListUserServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ListUserServlet</title>");            
+            out.println("<title>Servlet ListUserServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>All users:</h1>");
@@ -51,8 +51,9 @@ public class ListUserServlet extends HttpServlet {
         stmt = conn.createStatement();
         //executer query
         rs = stmt.executeQuery(query);
-            
+
       // itererer gjennom hele listen (resultset rs)
+            out.println("<ul>");
       while (rs.next())
       {
           //lager ny printer med navn sqlWriter og skriver ut i HTML format
@@ -64,8 +65,14 @@ public class ListUserServlet extends HttpServlet {
         String uEmail = rs.getString("u_email");
         String uRole = rs.getString("u_role");
         // kjøres for hver row med følgende format:
-        sqlWriter.format("<h3>ID: %s</h3> <h5>Role: %s</h5>  Name: %s %s </br>", id, uRole, firstName, lastName, uEmail);
+        sqlWriter.format("<li>ID:%s</br> Role: %s <br> Name: %s %s <br>Email:%s", id, uRole, firstName, lastName, uEmail);
+        sqlWriter.format("<br><form method=\"post\" action=\"DeleteUserServlet?UID=" + id +"\">");
+        sqlWriter.println("<input type=\"submit\" value=\"SLETT BRUKER\">");
+        sqlWriter.println("</form>");
       }
+        out.println("</ul>");
+        out.println("</body>");
+        out.println("</html>");
       //lukker tilkoblingen
          stmt.close();
             } //henter og sender feilmeldinger. Foreløpig går de kun til console i IDE
@@ -74,10 +81,8 @@ public class ListUserServlet extends HttpServlet {
               System.err.println("Got an exception! ");
               System.err.println(e.getMessage());
             }
-            System.out.println("</body>");
-            System.out.println("</html>");
         }
-    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
