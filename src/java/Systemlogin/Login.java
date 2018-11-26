@@ -27,7 +27,7 @@ public class Login extends HttpServlet {
             String uname = request.getParameter("uname");
             String pass = request.getParameter("pass");
 
-            if(uname.equals("student") && pass.equals("student"))
+            if(pass.equals("student"))
             {
 
                 HttpSession session = request.getSession();
@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
                     session.setAttribute("username", uname);
                     response.sendRedirect("Teacher/index.jsp");
                 } else {
-                    response.sendRedirect("login.jsp");
+                    response.sendRedirect("index.jsp");
                 }
             }
     }
