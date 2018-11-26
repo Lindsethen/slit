@@ -25,6 +25,7 @@ public class EditGoalServlet extends HttpServlet {
     private ResultSet rs = null;
     String nameString = null;
     String stringString = null;
+    int goalID;
   
 
     /**
@@ -51,10 +52,7 @@ public class EditGoalServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
             try{
-                //lager strings å sende til serveren
-                String nameString;
-                String stringString;
-                int goalID;
+
                 
                 //Henter info fra forrige side
                 nameString = request.getParameter("nameString");

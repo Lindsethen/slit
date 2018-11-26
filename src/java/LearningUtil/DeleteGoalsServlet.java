@@ -3,24 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserUtil;
+package LearningUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
- * @author matjo
+ * @author Ludamac
  */
-@WebServlet(name = "DeleteUser", urlPatterns = {"/DeleteUserServlet"})
-public class DeleteUserServlet extends HttpServlet {
-//int fordi det lagres som int i MySQL
-int userID;
+@WebServlet(name = "DeleteGoalsServlet", urlPatterns = {"/DeleteGoalsServlet"})
+
+public class DeleteGoalsServlet extends HttpServlet {
+int goalID;
+String idString = null;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -30,28 +31,23 @@ int userID;
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
-     //starter servlet (post/get metodene kjører void processRequest)
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        //starter HTML Skriving / Lager printwriter som kalles ".out"
         try (PrintWriter out = response.getWriter()) {
-            //Henter ID fra forrige side (/user/deleteuser.html) og gjør om til int fra string
-            String idString = request.getParameter("UID");
-            userID = Integer.parseInt(idString);
-            //kjører DeleteUsers.deleteID med int userID som parameter. =new fordi deleteID er en statisk funksjon
-            DeleteUsers delClass = new DeleteUsers();
-            delClass.deleteID(userID);
-            //Printer mer HTML
+            idString = request.getParameter("GID");
+            goalID = Integer.parseInt(idString);
+            //kjører DeleteModules.deleteID med int goalID som parameter. =new fordi deleteID er en statisk funksjon
+            DeleteGoals delClass = new DeleteGoals();
+            delClass.deleteGoal(goalID);
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DeleteUserServlet</title>");            
+            out.println("<title>Delete learning goal</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("Slettet bruker nummer " +idString);
-            out.println("<h1>Servlet DeleteUserServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Delete learning goal at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -64,6 +64,10 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>Systemlogin.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>LearningUtil.NewServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -105,12 +109,12 @@
         <url-pattern>/EditModuleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-      <servlet-name>OverviewServlet</servlet-name>
-      <url-pattern>/OverviewServlet</url-pattern>
+        <servlet-name>OverviewServlet</servlet-name>
+        <url-pattern>/OverviewServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-      <servlet-name>EditGoalServlet</servlet-name>
-      <url-pattern>/EditGoalServlet</url-pattern>
+        <servlet-name>EditGoalServlet</servlet-name>
+        <url-pattern>/EditGoalServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListModuleServlet</servlet-name>
@@ -123,6 +127,11 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+=======<servlet-name>LoginServlet</servlet-name>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
