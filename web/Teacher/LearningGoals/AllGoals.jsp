@@ -18,7 +18,7 @@
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-        String query = "SELECT * LEARNINGGOAL ORDER BY lg_id ASC;";
+        String query = "SELECT * FROM LEARNINGGOAL ORDER BY lg_id ASC;";
         //connect til db
     try {
         conn = DbUtil.ConnectionManager.getConnection();
@@ -34,10 +34,10 @@
           PrintWriter sqlWriter = response.getWriter();
           //hvilke columns som skal kalles hva (SQL -> Java)
           int id = rs.getInt("lg_id");
-          String lgName = rs.getString("lg_name");
+          //String lgName = rs.getString("lg_name");
           String lgString = rs.getString("lg_string");
           // kjøres for hver row med følgende format:
-          sqlWriter.format("<li>Number:%s Name: %s</br> String: %s", id, lgName, lgString);
+          sqlWriter.format("<li>Number:%s </br> Description: %s", id, lgString);
           sqlWriter.format("<br><form method=\"post\" action=\"DeleteGoalsServlet?UID=" + id +"\">");
           sqlWriter.println("<input type=\"submit\" value=\"SLETT LÆREMÅL\">");
           sqlWriter.println("</form>");
