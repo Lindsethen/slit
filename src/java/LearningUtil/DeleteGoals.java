@@ -15,13 +15,13 @@ import java.sql.Connection;
  * @author matjo
  */
 public class DeleteGoals {
-int targetGoal;
-    
-    public void deleteGoal(int goalID) {
+String targetGoal = null;
+
+    public static void deleteGoal(String goalNo) {
         Connection conn;
         Statement stmt;
-        targetGoal = goalID;
-        
+        String targetGoal = goalNo;
+
         try {
             // The newInstance() call is a work around for some
             // broken Java implementations
@@ -34,7 +34,7 @@ int targetGoal;
 //            conn = DriverManager.getConnection(
 //                    "jdbc:mysql://localhost:3306/slit", "slit", "verystrong");
 //
- //          
+ //
  //       }
   //      catch (SQLException ex) {
    //         System.out.println("Error: " + ex);
@@ -50,5 +50,5 @@ int targetGoal;
             System.out.println("Error: " + ex);
         }
     }
-    
+
 }
