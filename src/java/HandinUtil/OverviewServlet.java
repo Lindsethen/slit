@@ -40,7 +40,7 @@ String uid;
         response.setContentType("text/html;charset=UTF-8");
         userID = uid;
         PrintWriter out = response.getWriter();
-        out.println("<h1>" + userID + "</h1>");
+        out.println("<h1>Alle dine innleveringer</h1>");
         String query = "SELECT m_id, m_name, m_deadline, m_description, handin.hi_approved FROM MODULE, HANDIN WHERE m_published = 1 and handin.fk_u_id = " + userID + " and handin.fk_m_id = module.m_id ORDER BY m_id ASC;";
         //connect til db
     try {
@@ -68,9 +68,6 @@ String uid;
           String mDeadline = rs.getString("m_deadline");
           // kjøres for hver row med følgende format:
           sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s <br> Approved: %s", id, mName, mDesc, mDeadline, approvedString);
-          sqlWriter.format("<br><form method=\"post\" action=\"DeleteModuleServlet?UID=" + id +"\">");
-          sqlWriter.println("<input type=\"submit\" value=\"SLETT MODUL\">");
-          sqlWriter.println("</form>");
         }
     
       //lukker tilkoblingen
