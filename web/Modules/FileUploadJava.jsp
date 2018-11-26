@@ -8,7 +8,7 @@
   </head>
    <body>
      <center>
-    <form method="post" action="uploadServlet" enctype="multipart/form-data">
+    <form method="post" action="../FileUploadServlet" enctype="multipart/form-data">
     Velg fil du skal laste opp.:
     <input type="file" name="uploadFile" />
     <br/><br/>
