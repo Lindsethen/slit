@@ -3,13 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserUtil;
+package LearningUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,15 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author legob
+ * @author Ludamac
  */
-public class EditUserServlet extends HttpServlet {
-    private Connection conn = null;
-    private Statement stmt = null;
-    private ResultSet rs = null;
-    String mailString = null;
-    String fnameString = null;
-    String lnameString = null;
+public class DeleteGoalsServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,31 +35,12 @@ public class EditUserServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EditUserServlet</title>");
+            out.println("<title>Servlet DeleteGoalsServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet EditUserServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DeleteGoalsServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            try {
-                //lager strings å sende til serveren
-            String mailString;
-            int userID;
-                        //Henter info fra forrige side
-            mailString = request.getParameter("mailString");
-            userID = Integer.parseInt("userID");
-
-                EditUser eu = new EditUser();
-                eu.changeEmail(mailString, userID);
-                eu.changeFname(fnameString, userID);
-                eu.changeLname(lnameString, userID);
-            }
-                catch (Exception e){
-
-                System.out.println("Noe gikk galt.");
-                System.out.println(e);
-            }
-
         }
     }
 

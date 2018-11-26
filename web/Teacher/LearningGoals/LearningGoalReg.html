@@ -4,8 +4,6 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<!-- Bootstrap - Joakim -->
-
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -17,7 +15,7 @@ and open the template in the editor.
     <style>
 .jumbotron{
     background-color:#7C01BA;
-    color:purple;
+    color:grey;
 }
 /* Adds borders for tabs */
 .tab-content {
@@ -30,31 +28,36 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
-        <title>SLIT</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-     <div class="container">
-       <h1>Alt_Ctrl SLIT</h1>
-     </div>
-        <br>
-        <div class="jumbotron">
 
-            <a href="Teacher" class ="text-white">Lærerside</a>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <a href="Student" class = "text-white">Studentside</a>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <a href="LearningGoals" class = "text-white">Administrer læremål</a>
 
-        </div>
+    <title>New learning goal</title>
+</head>
+<body>
+    <div class="container">
+<h1>Please input learning goal data</h1>
+    </div>
+<br>
+<div class="jumbotron">
+<form action="../NewLearninGoalServlet" method="post">
+    <input type="text" name="lgNum" placeholder="Module number">
+    <br>
+    <input type="text" name="lgName" placeholder="Module name">
+    <br>
+    <input type="text" name="lgDesc" placeholder="Module description">
+    <br>
+    <input type="submit" value="submit">
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="../index.html" class="text-white">Tilbake til index</a>
+</div>
+
+
+
     </body>
 
-  <!-- Optional JavaScript -->
+      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
