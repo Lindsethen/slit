@@ -45,7 +45,7 @@ public class OverviewServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>All users:</h1>");
             //lager query
-        String query = "SELECT * FROM ApprovedHandins;";
+        String query = "SELECT * FROM Progress;";
         //connect til db
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
@@ -60,11 +60,13 @@ public class OverviewServlet extends HttpServlet {
         //hvilke columns som skal kalles hva (SQL -> Java)
         String firstName = rs.getString("u_fname");
         String lastName = rs.getString("u_lname");
-        String delivered = rs.getString("Delivered");
-        String approved = rs.getString("Approved");
+        int delivered = rs.getInt("Delivered");
+        int approved = rs.getInt("Approved");
+        int totalModules = rs.getInt("ModuleCount");
         // kjøres for hver row med følgende format:
-        sqlWriter.format("<li>Name: %s %s</br>"
-                + "Levert: %s <br> Godkjent: %s", firstName, lastName, delivered, approved);
+        int progressValue = 100 / totalModules * delivered;
+        sqlWriter.format("<li>Name: %s %s <br>   <progress value=\"%s\" max=\"%s\"></progress></br>"
+                + "Levert: %s <br> Godkjent: %s", firstName, lastName, approved, totalModules, delivered, approved);
       }
         out.println("</ul>");
       //lukker tilkoblingen
@@ -75,8 +77,6 @@ public class OverviewServlet extends HttpServlet {
               System.err.println("Got an exception! ");
               System.err.println(e.getMessage());
             }
-            System.out.println("</body>");
-            System.out.println("</html>");
         }
         
 
