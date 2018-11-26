@@ -24,6 +24,10 @@ public class EditModuleServlet extends HttpServlet {
     private Statement stmt = null;
     private ResultSet rs = null;
     String moduleString = null;
+    String descriptionString = null;
+    String deadlineString = null;
+    String nameString = null;
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,14 +54,20 @@ public class EditModuleServlet extends HttpServlet {
             out.println("</html>");
             try {
                 //Lage strings og sender til serveren
-            String moduleString;
+            String ModuleString;
             int ModuleID;
                     //Henter infro fra EditModule siden
             moduleString = request.getParameter("moduleString");
+            descriptionString = request.getParameter("descriptionString");
+            deadlineString = request.getParameter("deadlineString");
+            nameString = request.getParameter("nameString");
             ModuleID = Integer.parseInt("ModuleID");
             
                 EditModule em = new EditModule();
                 em.changeModule(moduleString, ModuleID);
+                em.changeDescription(descriptionString, ModuleID);
+                em.changeDeadline(deadlineString, ModuleID);
+                em.changeName(nameString, ModuleID);
             }
             catch (Exception e){
                     System.out.println("Noe gikk galt.");
