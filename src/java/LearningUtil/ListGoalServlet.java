@@ -46,11 +46,10 @@ public class ListGoalServlet extends HttpServlet {
             out.println("<title>Servlet ListGoalServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ListGoalServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
-            out.println("</html>");
+            out.println("<h1> Alle læremål: </h1>");
             //lager query
-             String query = "SELECT * FROM LEARNING ORDER BY g_Name DESC;";
+            String query = "SELECT * LEARNINGGOAL ORDER BY lg_id ASC;";
         //connect til db
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
@@ -58,18 +57,24 @@ public class ListGoalServlet extends HttpServlet {
         rs = stmt.executeQuery(query);
         
         // itererer gjennom hele listen (resultset rs)
-            while (rs.next())
+        while (rs.next())
       {
         //lager ny printer med navn sqlWriter og skriver ut i HTML format
         PrintWriter sqlWriter = response.getWriter();
         //hvilke columns som skal kalles hva (SQL -> Java)
         int id = rs.getInt("lg_id");
-        String Name = rs.getString("lg_name");
-        String Description = rs.getString("lg_string");
+        String lgName = rs.getString("lg_name");
+        String lgString = rs.getString("lg_string");
         // kjøres for hver row med følgende format:
-        sqlWriter.format("<h3>ID: %s</h3> <h5>Name: %s</h5>  Desc: %s </br>", id, Name, Description);
+        sqlWriter.format("<h3>ID: %s</h3> <h5>Name: %s</h5>  Desc: %s </br>", id, lgName, lgString);
+        sqlWriter.format("<br><form method=\"post\" action=\"DeleteGoalsServlet?GID=" + id +"\">");
+        sqlWriter.println("<input type=\"submit\" value=\"SLETT LÆRERMÅL\">");
+          sqlWriter.println("</form>");
       }
-            //lukker tilkoblingen
+        out.println("</ul>");
+        out.println("</body>");
+        out.println("</html>");
+      //lukker tilkoblingen
          stmt.close();
             } //henter og sender feilmeldinger. Foreløpig går de kun til console i IDE
             catch (Exception e)
@@ -77,10 +82,7 @@ public class ListGoalServlet extends HttpServlet {
               System.err.println("Got an exception! ");
               System.err.println(e.getMessage());
             }
-            System.out.println("</body>");
-            System.out.println("</html>");
         }
-
 
     /**
      * Handles the HTTP <code>POST</code> method.
