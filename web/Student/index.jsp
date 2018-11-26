@@ -37,6 +37,15 @@ and open the template in the editor.
     <body>
      <div class="container">
        <h1>DENNE SIDEN ER PLACEHOLDER. DETTE SKAL BLI LOGIN</h1>
+       <%
+            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+            if (session.getAttribute("username")==null)
+            {
+                response.sendRedirect("login.jsp");
+            }
+
+        %>
+           Velkommen ${username}
      </div>
         <br>
         <div class="jumbotron">
@@ -52,6 +61,13 @@ and open the template in the editor.
             <a href="Class" class = "text-white">Klasse</a>
 
         </div>
+        
+            <form action="../LogoutServlet">
+              
+              <input type="submit" value="Logout">
+          
+            </form>   
+        
     </body>
 
   <!-- Optional JavaScript -->

@@ -32,15 +32,15 @@ public class Login extends HttpServlet {
 
                 HttpSession session = request.getSession();
                 session.setAttribute("username", uname);
-                response.sendRedirect("Student/index.html");
+                response.sendRedirect("Student/index.jsp");
 
             }
             else
             {
-                if(uname.equals("teacher") && pass.equals("teacher")) {
+                if(uname.equals("lærer") && pass.equals("lærer")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("username", uname);
-                    response.sendRedirect("Teacher/index.html");
+                    response.sendRedirect("Teacher/index.jsp");
                 } else {
                     response.sendRedirect("login.jsp");
                 }
