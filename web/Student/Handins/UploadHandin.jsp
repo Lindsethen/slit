@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!-- Bootstrap - Joakim -->
+<%-- 
+    Document   : UploadHandin
+    Created on : 26.nov.2018, 12:31:12
+    Author     : Henrik
+--%>
+
+
 
 <html lang="en">
   <head>
@@ -17,7 +17,7 @@ and open the template in the editor.
     <style>
 .jumbotron{
     background-color:#7C01BA;
-    color:grey;
+    color:purple;
 }
 /* Adds borders for tabs */
 .tab-content {
@@ -30,29 +30,51 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="container">
-        <h1>Moduler</h1>
-        </div>
 
-        <div class="jumbotron">
-
-        <a href="../../HandinOverviewServlet" class ="text-white">Oversikt</a>
-            &nbsp;
-            &nbsp;
-        <a href="AllModules.jsp" class ="text-white">Liste av moduler</a>
-            &nbsp;
-            &nbsp;
-        <a href="DeleteModule.html" class ="text-white">Slett modul</a>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//DELIVER HAND-IN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>File Upload to Database example</title>
+</head>
+<body>
+    <center>
         
+        <div class="container">
+        <h1>Filopplastning for modul</h1>
         </div>
-    </body>
+       
+        <div class="jumbotron">
+            <div class="container">
+        <form method="post" action="../../UploadHandin" enctype="multipart/form-data">
+            <table border="0">
+                <tr>
+                    <td>Student: </td>
+                    <td><input type="text-white" name="studentName" size="50"/></td>
+                </tr>
+                <tr>
+                    <td>Module: </td>
+                    <td><input type="text" name="moduleNumber" size="50"/></td>
+                </tr>
+                <tr>
+                    <td>:Upload </td>
+                    <td><input type="file" name="handinHere" size="50"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Save">
+                    </td>
+                </tr>
+            </table>
+        </form>
+            </div>
+        </div>
+    </center>
+</body>
 
-      <!-- Optional JavaScript -->
+  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

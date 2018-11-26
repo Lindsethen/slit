@@ -72,6 +72,10 @@
         <servlet-name>HandinOverviewServlet</servlet-name>
         <servlet-class>HandinUtil.OverviewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadHandin</servlet-name>
+        <servlet-class>Handinutil.UploadHandin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -139,6 +143,10 @@
     <servlet-mapping>
         <servlet-name>HandinOverviewServlet</servlet-name>
         <url-pattern>/HandinOverviewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadHandin</servlet-name>
+        <url-pattern>/UploadHandin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
