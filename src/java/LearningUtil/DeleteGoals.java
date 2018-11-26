@@ -15,12 +15,12 @@ import java.sql.Connection;
  * @author matjo
  */
 public class DeleteGoals {
-String targetGoal = null;
+int targetGoal;
     
-    public static void deleteGoal(String goalNo) {
+    public void deleteGoal(int goalID) {
         Connection conn;
         Statement stmt;
-        String targetGoal = goalNo;
+        targetGoal = goalID;
         
         try {
             // The newInstance() call is a work around for some
@@ -44,7 +44,7 @@ String targetGoal = null;
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/slit", "slit", "verystrong");
             stmt = conn.createStatement();
-            stmt.executeUpdate("DELETE FROM USER WHERE c_id LIKE " + targetGoal);
+            stmt.executeUpdate("DELETE FROM USER WHERE lg_id LIKE " + targetGoal);
         }
         catch (SQLException ex) {
             System.out.println("Error: " + ex);
