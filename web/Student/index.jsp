@@ -36,7 +36,16 @@ and open the template in the editor.
     </head>
     <body>
      <div class="container">
-       <h1>Lærerfunksjoner</h1>
+       <h1>Velkommen til SLIT</h1>
+       <%
+            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+            if (session.getAttribute("username")==null)
+            {
+                response.sendRedirect("login.jsp");
+            }
+
+        %>
+           Velkommen ${username}
      </div>
         <br>
         <div class="jumbotron">
@@ -45,17 +54,20 @@ and open the template in the editor.
             &nbsp;
             &nbsp;
             &nbsp;
-            <a href="LearningGoals" class = "text-white">Læremål</a>
+            <a href="Handins" class = "text-white">Handins</a>
             &nbsp;
             &nbsp;
             &nbsp;
-            <a href="Users" class = "text-white">Studenter</a>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <a href="Handins" class = "text-white">Innleveringer</a>
+            <a href="Class" class = "text-white">Klasse</a>
 
         </div>
+
+            <form action="../LogoutServlet">
+
+              <input type="submit" value="Logout">
+
+            </form>
+
     </body>
 
   <!-- Optional JavaScript -->

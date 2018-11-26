@@ -25,7 +25,7 @@ public class ListGoalServlet extends HttpServlet {
         private Connection conn = null;
         private Statement stmt = null;
         private ResultSet rs = null;
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,7 +43,7 @@ public class ListGoalServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ListGoalServlet</title>");            
+            out.println("<title>Servlet ListGoalServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("</body>");
@@ -55,7 +55,7 @@ public class ListGoalServlet extends HttpServlet {
         stmt = conn.createStatement();
         //executer query
         rs = stmt.executeQuery(query);
-        
+
         // itererer gjennom hele listen (resultset rs)
         while (rs.next())
       {
@@ -109,4 +109,3 @@ public class ListGoalServlet extends HttpServlet {
     }// </editor-fold>
 
 }
-
