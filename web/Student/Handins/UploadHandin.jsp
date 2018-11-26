@@ -14,7 +14,7 @@
 </head>
 <body>
     <center>
-        <h1>File Upload to Database example</h1>
+        <h1>Filopplastning for modul</h1>
         <form method="post" action="../../UploadHandin" enctype="multipart/form-data">
             <table border="0">
                 <tr>
