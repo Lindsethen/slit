@@ -18,12 +18,9 @@ import javax.servlet.http.HttpSession;
  *
  * @author josteinvagarygg
  */
-@WebServlet(name ="LoginServlet")
+@WebServlet(name ="Login")
 public class Login extends HttpServlet {
 
-    
-    
-    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -43,10 +40,10 @@ public class Login extends HttpServlet {
                 if(uname.equals("teacher") && pass.equals("teacher")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("username", uname);
-                    response.sendRedirect("welcome.jsp");
+                    response.sendRedirect("Teacher/index.html");
                 } else {
-                    response.sendRedirect("../Teacher/index.html");
+                    response.sendRedirect("login.jsp");
                 }
-                }
+            }
     }
 }
