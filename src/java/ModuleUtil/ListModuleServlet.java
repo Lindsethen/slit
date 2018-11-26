@@ -45,7 +45,7 @@ public class ListModuleServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Alle moduler:</h1>");
             //lager query
-        String query = "SELECT m_id, m_name, m_deadline, m_description FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
+        String query = "SELECT m_id, m_name, m_deadline, m_description, m_published FROM MODULE ORDER BY m_id ASC;";
         //connect til db
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
@@ -63,8 +63,13 @@ public class ListModuleServlet extends HttpServlet {
           String mName = rs.getString("m_name");
           String mDesc = rs.getString("m_description");
           String mDeadline = rs.getString("m_deadline");
+          String publishedString;
+          boolean isPublished = rs.getBoolean("m_published");
+          if (isPublished) {
+              publishedString = "Yes";
+                      } else { publishedString = "No"; }
           // kjøres for hver row med følgende format:
-          sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s", id, mName, mDesc, mDeadline);
+          sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s <br>Published: %s", id, mName, mDesc, mDeadline, publishedString);
           sqlWriter.format("<br><form method=\"post\" action=\"DeleteModuleServlet?UID=" + id +"\">");
           sqlWriter.println("<input type=\"submit\" value=\"SLETT MODUL\">");
           sqlWriter.println("</form>");
