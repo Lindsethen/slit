@@ -17,7 +17,8 @@ public class ConnectionManager {
                         "jdbc:mysql://localhost:3306/slit", "slit", "verystrong");
             } catch (SQLException ex) {
                 // log an exception. fro example:
-                System.out.println("Failed to create the database connection."); 
+                System.out.println("Failed to create the database connection.");
+                System.out.println(ex);
             }
         } catch (ClassNotFoundException ex) {
             // log an exception. for example:
