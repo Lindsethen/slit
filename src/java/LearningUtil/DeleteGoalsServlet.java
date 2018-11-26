@@ -11,13 +11,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author Ludamac
  */
-public class DeleteGoalsServlet extends HttpServlet {
+@WebServlet(name = "DeleteGoalsServlet", urlPatterns = {"/DeleteGoalsServlet"})
 
+public class DeleteGoalsServlet extends HttpServlet {
+int goalID;
+String idString = null;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,14 +35,19 @@ public class DeleteGoalsServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            idString = request.getParameter("GID");
+            goalID = Integer.parseInt(idString);
+            //kjører DeleteModules.deleteID med int goalID som parameter. =new fordi deleteID er en statisk funksjon
+            DeleteGoals delClass = new DeleteGoals();
+            delClass.deleteGoal(goalID);
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DeleteGoalsServlet</title>");            
+            out.println("<title>Delete learning goal</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DeleteGoalsServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Delete learning goal at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -41,7 +41,7 @@ int ModuleID;
         try (PrintWriter out = response.getWriter()) {
             //Henter ID fra forrige side (/user/deleteuser.html) og gjør om til int fra string
             String idString = request.getParameter("UID");
-            int ModuleID = Integer.parseInt(idString);
+            ModuleID = Integer.parseInt(idString);
             //kjører DeleteModules.deleteID med int ModuleID som parameter. =new fordi deleteID er en statisk funksjon
             DeleteModules delClass = new DeleteModules();
             delClass.deleteID(ModuleID);
