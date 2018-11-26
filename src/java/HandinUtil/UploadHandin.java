@@ -21,12 +21,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
  
 @WebServlet(name ="UploadHandin")
-@MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 16MB
+@MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 4GB
 public class UploadHandin extends HttpServlet {
      
     // database connection settings
-    private String dbURL = "jdbc:mysql://localhost:3306/AppDB";
-    private String dbUser = "root";
+    private String dbURL = "jdbc:mysql://localhost:3306"
+            + "/example";
+    private String dbUser = "file";
     private String dbPass = "secret";
      
     protected void doPost(HttpServletRequest request,
