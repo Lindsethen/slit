@@ -24,18 +24,18 @@ public class NewLearningServlet extends HttpServlet {
 
             //lager strings å sende til serveren
             String idString;
-            String lgName;
-            String lgDesc;
-            int lgNum;
+            String lg_name;
+            String lg_string;
+            int lg_ID;
             
             //Henter info fra forrige side
-            idString = request.getParameter("lgNum");
-            lgName = request.getParameter("lgName");
-            lgDesc = request.getParameter("lgDesc");
+            idString = request.getParameter("lg_id");
+            lg_name = request.getParameter("lg_name");
+            lg_string = request.getParameter("lg_string");
             //Gjør om string til int
-            lgNum = Integer.parseInt(idString); 
+            lg_ID = Integer.parseInt(idString); 
             //Printer pynt
-            out.print("Data retrieved about: " + lgName +"!");
+            out.print("Data retrieved about: " + lg_name +"!");
             out.print("<br>");
             out.print("Svar fra MySQLdriver: ");
             out.print("<h6>(JDBC driver)</h6>");
@@ -44,7 +44,7 @@ public class NewLearningServlet extends HttpServlet {
             NewLearning dbtool = new NewLearning();
             //logIn(out) skriver ut ex fra DbUtil
             dbtool.logIn(out);
-            dbtool.newLearning(lgNum, lgName, lgDesc, out);
+            dbtool.newLearning(lg_ID, lg_name, lg_string, out);
             dbtool.commit();
             dbtool.close();
 

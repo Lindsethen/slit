@@ -5,11 +5,42 @@
  */
 package LearningUtil;
 import DbUtil.ConnectionManager;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
- * @author matjo
+ * @author henlind
  */
 public class ListGoals {
-    
+private Connection conn = null;
+        private Statement stmt = null;
+        private ResultSet rs = null;
+    public void selectAll(){
+    try {
+        String query = "SELECT * FROM LEARNINGGOAL;";
+        conn = DbUtil.ConnectionManager.getConnection();
+        stmt = conn.createStatement();
+        rs = stmt.executeQuery(query);
+            
+      // iterate through the java resultset
+      while (rs.next())
+      {
+        int id = rs.getInt("lg_id");
+        String name = rs.getString("lg_name");
+        String desc = rs.getString("lg_string");
+        
+        // print the results
+        System.out.format("%s, %s, %s\n", id, name, desc);
+      }
+         stmt.close();
+            }
+            catch (Exception e)
+            {
+              System.err.println("Got an exception! ");
+              System.err.println(e.getMessage());
+            }
+  }
 }

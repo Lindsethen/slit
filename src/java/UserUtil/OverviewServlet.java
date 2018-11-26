@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author matjo
  */
-public class ListUserServlet extends HttpServlet {
+public class OverviewServlet extends HttpServlet {
         private Connection conn = null;
         private Statement stmt = null;
         private ResultSet rs = null;
@@ -40,39 +40,33 @@ public class ListUserServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ListUserServlet</title>");
+            out.println("<title>Servlet ListUserServlet</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>All users:</h1>");
             //lager query
-        String query = "SELECT * FROM USER ORDER BY u_lname DESC;";
+        String query = "SELECT * FROM ApprovedHandins;";
         //connect til db
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
         //executer query
         rs = stmt.executeQuery(query);
-
-      // itererer gjennom hele listen (resultset rs)
             out.println("<ul>");
+      // itererer gjennom hele listen (resultset rs)
       while (rs.next())
       {
           //lager ny printer med navn sqlWriter og skriver ut i HTML format
         PrintWriter sqlWriter = response.getWriter();
         //hvilke columns som skal kalles hva (SQL -> Java)
-        int id = rs.getInt("u_id");
         String firstName = rs.getString("u_fname");
         String lastName = rs.getString("u_lname");
-        String uEmail = rs.getString("u_email");
-        String uRole = rs.getString("u_role");
+        String delivered = rs.getString("Delivered");
+        String approved = rs.getString("Approved");
         // kjøres for hver row med følgende format:
-        sqlWriter.format("<li>ID:%s</br> Role: %s <br> Name: %s %s <br>Email:%s", id, uRole, firstName, lastName, uEmail);
-        sqlWriter.format("<br><form method=\"post\" action=\"DeleteUserServlet?UID=" + id +"\">");
-        sqlWriter.println("<input type=\"submit\" value=\"SLETT BRUKER\">");
-        sqlWriter.println("</form>");
+        sqlWriter.format("<li>Name: %s %s</br>"
+                + "Levert: %s <br> Godkjent: %s", firstName, lastName, delivered, approved);
       }
         out.println("</ul>");
-        out.println("</body>");
-        out.println("</html>");
       //lukker tilkoblingen
          stmt.close();
             } //henter og sender feilmeldinger. Foreløpig går de kun til console i IDE
@@ -81,8 +75,10 @@ public class ListUserServlet extends HttpServlet {
               System.err.println("Got an exception! ");
               System.err.println(e.getMessage());
             }
+            System.out.println("</body>");
+            System.out.println("</html>");
         }
-
+        
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserUtil;
+package ModuleUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,15 +17,17 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author legob
+ * @author Ludamac
  */
-public class EditUserServlet extends HttpServlet {
+public class EditModuleServlet extends HttpServlet {
     private Connection conn = null;
     private Statement stmt = null;
     private ResultSet rs = null;
-    String mailString = null;
-    String fnameString = null;
-    String lnameString = null;
+    String moduleString = null;
+    String descriptionString = null;
+    String deadlineString = null;
+    String nameString = null;
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,31 +46,34 @@ public class EditUserServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EditUserServlet</title>");            
+            out.println("<title>Servlet EditModuleServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet EditUserServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet EditModuleServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
             try {
-                //lager strings å sende til serveren
-            String mailString;
-            int userID;
-                        //Henter info fra forrige side
-            mailString = request.getParameter("mailString");
-            userID = Integer.parseInt("userID");
+                //Lage strings og sender til serveren
+            String ModuleString;
+            int ModuleID;
+                    //Henter infro fra EditModule siden
+            moduleString = request.getParameter("moduleString");
+            descriptionString = request.getParameter("descriptionString");
+            deadlineString = request.getParameter("deadlineString");
+            nameString = request.getParameter("nameString");
+            ModuleID = Integer.parseInt("ModuleID");
             
-                EditUser eu = new EditUser();
-                eu.changeEmail(mailString, userID);
-                eu.changeFname(fnameString, userID);
-                eu.changeLname(lnameString, userID);
-            } 
-                catch (Exception e){
-                
-                System.out.println("Noe gikk galt.");
-                System.out.println(e);
+                EditModule em = new EditModule();
+                em.changeModule(moduleString, ModuleID);
+                em.changeDescription(descriptionString, ModuleID);
+                em.changeDeadline(deadlineString, ModuleID);
+                em.changeName(nameString, ModuleID);
             }
-           
+            catch (Exception e){
+                    System.out.println("Noe gikk galt.");
+                    System.out.println(e);
+                    
+            }
         }
     }
 
