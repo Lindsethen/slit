@@ -61,8 +61,8 @@
         <servlet-class>LearningUtil.NewServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>uploadHandin</servlet-name>
-        <servlet-class>HandinUtil.uploadHandin</servlet-class>
+        <servlet-name>UploadHandin</servlet-name>
+        <servlet-class>HandinUtil.UploadHandin</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
@@ -121,8 +121,8 @@
         <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>uploadHandin</servlet-name>
-        <url-pattern>/uploadHandin</url-pattern>
+        <servlet-name>UploadHandin</servlet-name>
+        <url-pattern>/UploadHandin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

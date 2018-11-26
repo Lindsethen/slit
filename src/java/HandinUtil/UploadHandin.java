@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
  
-@WebServlet("/uploadServlet")
+@WebServlet(name ="UploadHandin")
 @MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 16MB
 public class UploadHandin extends HttpServlet {
      

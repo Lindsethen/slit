@@ -15,7 +15,7 @@
 <body>
     <center>
         <h1>File Upload to Database example</h1>
-        <form method="post" action="../../uploadServlet" enctype="multipart/form-data">
+        <form method="post" action="../../UploadHandin" enctype="multipart/form-data">
             <table border="0">
                 <tr>
                     <td>Student: </td>
