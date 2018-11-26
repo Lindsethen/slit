@@ -18,17 +18,24 @@
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-            String query = "SELECT m_id, m_name, m_deadline, m_description FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
-        //connect til db
+        String query = "SELECT m_id, m_name, m_deadline, m_description FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
+        %>
+        <%    //connect til db
     try {
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
         //executer query
         rs = stmt.executeQuery(query);
-    
-
-      // itererer gjennom hele listen (resultset rs)
-            out.println("<ul>");
+    } catch (Exception e)
+            {
+              System.err.println("Got an exception! ");
+              System.err.println(e.getMessage());
+            }
+        %>
+ 
+        <%    
+        PrintWriter htmlp = response.getWriter();    
+            htmlp.println("<ul>");
       while (rs.next())
         {
             //lager ny printer med navn sqlWriter og skriver ut i HTML format
@@ -39,21 +46,11 @@
           String mDesc = rs.getString("m_description");
           String mDeadline = rs.getString("m_deadline");
           // kjøres for hver row med følgende format:
-          sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s", id, mName, mDesc, mDeadline);
-          sqlWriter.format("<br><form method=\"post\" action=\"DeleteModuleServlet?UID=" + id +"\">");
-          sqlWriter.println("<input type=\"submit\" value=\"SLETT MODUL\">");
-          sqlWriter.println("</form>");
+          sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s<br>", id, mName, mDesc, mDeadline);
         }
     
       //lukker tilkoblingen
          stmt.close();
-             //henter og sender feilmeldinger. Foreløpig går de kun til console i IDE
-    }
-            catch (Exception e)
-            {
-              System.err.println("Got an exception! ");
-              System.err.println(e.getMessage());
-            }
             %>
             </ul>
     </body>
