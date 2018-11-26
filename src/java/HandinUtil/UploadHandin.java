@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Vi har brukt codejava.net for å lage denne servleten.
+ * "Uplaod files to database (Servlet + JSP + MySQL)":
+ * https://www.codejava.net/coding/upload-files-to-database-servlet-jsp-mysql
+ * Author = Henlind + CodeJava
  */
 package HandinUtil;
 
@@ -11,7 +12,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
- 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +37,7 @@ public class UploadHandin extends HttpServlet {
         String studentName = request.getParameter("studentName");
         String moduleNumber = request.getParameter("muduleNumber");
          
-        InputStream inputStream = null; // input stream of the upload file
+        InputStream inputStream = null;
          
         // obtains the upload file part in this multipart request
         Part filePart = request.getPart("handinHere");
