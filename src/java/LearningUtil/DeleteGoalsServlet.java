@@ -17,7 +17,7 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Ludamac
  */
-@WebServlet(name = "DeleteGoals", urlPatterns = {"/DeleteGoalsServlet"})
+@WebServlet(name = "DeleteGoalsServlet", urlPatterns = {"/DeleteGoalsServlet"})
 
 public class DeleteGoalsServlet extends HttpServlet {
 int goalID;

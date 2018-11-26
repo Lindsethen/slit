@@ -24,7 +24,7 @@ public class DeleteModules {
     
     public void deleteID(int ID){
         //SQL Query
-        int ModuleID = ID;
+        ModuleID = ID;
         String sqlQuery = "DELETE FROM MODULE WHERE m_id = " + ModuleID;
         
             //Connecting using DbUtil.ConnectionManager
