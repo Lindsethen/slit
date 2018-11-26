@@ -26,7 +26,7 @@ public class DeleteUsers {
      */
     public void deleteID(int ID){
             //SQL Query
-            int userID = ID;
+            userID = ID;
             String sqlQuery = "DELETE FROM USER WHERE u_id = " + userID;
             
             //Connecting using DbUtil.ConnectionManager
