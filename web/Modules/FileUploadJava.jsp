@@ -7,7 +7,7 @@
     File f = new File("File");
     Connection conn = null;
     Statement stmt = null;
-    String sqlQuery = "BULK INSERT INTO FILE FROM";
+    String sqlQuery;
     try{
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
@@ -29,8 +29,7 @@
     <br/><br/>
     <input type="submit" value="Last opp" />
     <%
-        
-        stmt.executeUpdate(sqlQuery);
+        stmt.executeUpdate("");
     %>
     </form>
     <h4>
