@@ -44,10 +44,10 @@ and open the template in the editor.
         <a href="ModuleReg.jsp" class ="text-white">Registrer ny modul</a>
             &nbsp;
             &nbsp;
-        <a href="../../ListModules" class ="text-white">Liste av moduler</a>
+        <a href="AllModules.jsp" class ="text-white">Liste av moduler</a>
             &nbsp;
             &nbsp;
-        <a href="../../DeleteModule.html" class ="text-white">Slett modul</a>
+        <a href="DeleteModule.jsp" class ="text-white">Slett modul</a>
             &nbsp;
             &nbsp;
         <a href="../../EditModuleServlet" class ="text-white">Endre modul</a>

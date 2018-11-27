@@ -60,7 +60,7 @@
             %>
             </ul>
     <h4>
-    <a href="../../index.jsp">Tilbake til forsiden</a>
+    <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
     </h4>
     </body>
 </html>
