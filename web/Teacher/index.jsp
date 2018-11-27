@@ -50,7 +50,7 @@ and open the template in the editor.
         <br>
         <div class="jumbotron">
             
-            <a href="Modules" class ="text-white">Moduler</a>
+            <a href="./Modules/index.jsp" class ="text-white">Moduler</a>
             &nbsp;
             &nbsp;
             &nbsp;
