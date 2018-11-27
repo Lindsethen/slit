@@ -20,14 +20,17 @@ import javax.servlet.http.HttpServletResponse;
  * @author Ludamac
  */
 public class EditModuleServlet extends HttpServlet {
-    private Connection conn = null;
-    private Statement stmt = null;
-    private ResultSet rs = null;
-    String moduleString = null;
-    String descriptionString = null;
-    String deadlineString = null;
-    String nameString = null;
-    int ModuleID;
+    Connection conn = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+    String moduleString;
+    String descriptionString;
+    String deadlineString;
+    String nameString;
+    int newNum;
+    String moduleID;
+    boolean isPublished;
+    String published;
     
 
     /**
@@ -50,25 +53,41 @@ public class EditModuleServlet extends HttpServlet {
             out.println("<title>Servlet EditModuleServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet EditModuleServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
             try {
 
             
                     //Henter info fra EditModule siden
-            moduleString = request.getParameter("moduleString");
+            moduleID = request.getParameter("MID");
             descriptionString = request.getParameter("descriptionString");
             deadlineString = request.getParameter("deadlineString");
             nameString = request.getParameter("nameString");
-            ModuleID = Integer.parseInt("ModuleID");
-            
+            moduleString = request.getParameter("newNum");
+            //newNum = Integer.parseInt(moduleString);
+            published = request.getParameter("published");
                 EditModule em = new EditModule();
-                em.changeModule(moduleString, ModuleID);
-                em.changeDescription(descriptionString, ModuleID);
-                em.changeDeadline(deadlineString, ModuleID);
-                em.changeName(nameString, ModuleID);
-                
+                //sjekker om published har en verdi og endrer published om den har en verdi
+                if (published != null) {
+                    if ("1".equals(published)) {
+                        (isPublished)=true; 
+                        em.changePublished(isPublished, moduleID);} else{
+                            (isPublished)=false;}
+                            em.changePublished(isPublished, moduleID);
+                    }
+                if (!"null".equals(moduleString)) {
+                em.changeID(newNum, moduleID); }
+                if (!"null".equals(descriptionString)) {
+                em.changeDescription(descriptionString, moduleID); }
+                if (!"null".equals(deadlineString)) {
+                em.changeDeadline(deadlineString, moduleID); }
+                if (nameString != null) {
+                em.changeName(nameString, moduleID); }
+                out.println("<br>Endret følgende:");
+                out.println("<br>Navn: " + nameString);
+                out.println("<br>Nummer: " + moduleString);
+                out.println("<br>Beskrivelse: " + descriptionString);
+                out.println("<br>Frist: " + deadlineString);
             }
             catch (Exception e){
                     System.out.println("Noe gikk galt.");
