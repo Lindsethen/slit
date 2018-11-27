@@ -40,7 +40,7 @@ and open the template in the editor.
                     <a href="LearningGoalReg.html" class = "text-white">Legg til læremål</a>
                     &nbsp;
                     &nbsp;
-                    <a href="AllGoals.jsp" class = "text-white">List alle læremåll</a>
+                    <a href="AllGoals.jsp" class = "text-white">List alle læremål</a>
                     &nbsp;
                     &nbsp;
                     <a href="EditLearningGoal.html" class ="text-white">Rediger læremål</a>
