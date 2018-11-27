@@ -29,10 +29,6 @@
         <servlet-class>UserUtil.RegisterUserServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>DeleteModuleServlet</servlet-name>
-        <servlet-class>ModuleUtil.DeleteModuleServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>DeleteGoalsServlet</servlet-name>
         <servlet-class>LearningUtil.DeleteGoalsServlet</servlet-class>
     </servlet>
@@ -80,6 +76,10 @@
         <servlet-name>EditSpecific</servlet-name>
         <servlet-class>LearningUtil.EditSpecific</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteModulesServlet</servlet-name>
+        <servlet-class>ModuleUtil.DeleteModulesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -107,10 +107,6 @@
     <servlet-mapping>
         <servlet-name>EditUserServlet</servlet-name>
         <url-pattern>/EditUserServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteModuleServlet</servlet-name>
-        <url-pattern>/DeleteModuleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteGoalsServlet</servlet-name>
@@ -155,6 +151,10 @@
     <servlet-mapping>
         <servlet-name>EditSpecific</servlet-name>
         <url-pattern>/Teacher/LearningGoals/EditSpecific</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteModulesServlet</servlet-name>
+        <url-pattern>/DeleteModulesServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
