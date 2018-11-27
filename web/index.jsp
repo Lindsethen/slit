@@ -54,7 +54,7 @@
             <p class="text-white">Skriv inn passord: </p> <input type="password" name="pass"> 
             <br>
             <br>
-            <input type="submit" value="Log inn">
+            <input type="submit" value="Logg inn">
             
         </form>
             </div>
