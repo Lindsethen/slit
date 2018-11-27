@@ -48,7 +48,7 @@
        
         <div class="jumbotron">
             <div class="container">
-        <form method="post" action="../../UploadHandin.java" enctype="multipart/form-data">
+        <form method="post" action="../../UploadHandin" enctype="multipart/form-data">
             <table border="0">
                 <tr>
                     <td>Student: </td>
