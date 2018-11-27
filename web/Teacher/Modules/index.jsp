@@ -50,7 +50,6 @@ and open the template in the editor.
         <a href="DeleteModule.jsp" class ="text-white">Slett modul</a>
             &nbsp;
             &nbsp;
-        <a href="../../EditModuleServlet" class ="text-white">Endre modul</a>
         <br>
         <br>
         <br>
