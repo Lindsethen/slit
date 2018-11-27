@@ -54,7 +54,7 @@ and open the template in the editor.
             &nbsp;
             &nbsp;
             &nbsp;
-            <a href="Handins" class = "text-white">Handins</a>
+            <a href="Handins" class = "text-white">Innleveringer</a>
             &nbsp;
             &nbsp;
             &nbsp;
