@@ -45,7 +45,7 @@ and open the template in the editor.
         
         </div>
     </body>
-    <a href="../../index.jsp" class="text-white">Tilbake til forside</a>
+    <a href="../index.jsp" class="text-black">Tilbake til forside</a>
     <form action="../../LogoutServlet">
 
               <input type="submit" value="Logout">
