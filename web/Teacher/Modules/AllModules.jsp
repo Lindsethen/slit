@@ -13,12 +13,13 @@
         <title>Alle moduler</title>
     </head>
     <body>
-        <%
+        <ul>   <%
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-        String query = "SELECT * FROM m_id, m_name, m_deadline, m_description FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
+        String query = "SELECT m_id, m_name, m_deadline, m_description FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
         //connect til db
+        
     try {
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
