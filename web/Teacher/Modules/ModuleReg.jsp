@@ -34,7 +34,7 @@ and open the template in the editor.
 </head>
 <body>
     <div class="container">
-<h1>Which module do you want to delete?</h1>
+<h1>Hvilken modul vil du fjerne?</h1>
     </div>
 <br>
 
