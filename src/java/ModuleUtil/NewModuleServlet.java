@@ -23,22 +23,25 @@ public class NewModuleServlet extends HttpServlet {
             out.println("<body>");
 
             //lager strings å sende til serveren
-            //String numString;
+            
+            int mId;
+            String moduleId;
             String mName;
             String mDesc;
             String mDeadline;
             String mPublished;
-            //int mNum;
             
             //Henter info fra forrige side
-            //numString = request.getParameter("mNum");
+            moduleId = request.getParameter("moduleId");
+            mId = Integer.parseInt(moduleId);
             mName = request.getParameter("mName");
             mDesc = request.getParameter("mDesc");
             mDeadline = request.getParameter("mDeadline");
             mPublished = request.getParameter("mPublished");
             //Gjør om string til int
-            //mNum = Integer.parseInt(numString); 
-            //Printer pynt
+
+
+            
             out.print("Data retrieved about: " + mName +"!");
             out.print("<br>");
             out.print("Svar fra MySQLdriver: ");
@@ -47,7 +50,7 @@ public class NewModuleServlet extends HttpServlet {
             NewModule dbtool = new NewModule();
             //logIn(out) skriver ut ex fra DbUtil
             dbtool.logIn(out);
-            dbtool.newModule(mName, mDesc, mDeadline, mPublished, out);
+            dbtool.newModule(mId, mName, mDesc, mDeadline, mPublished, out);
             dbtool.commit();
             dbtool.close();
 

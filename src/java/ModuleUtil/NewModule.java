@@ -31,8 +31,8 @@ public class NewModule {
         }
     }
 
-    public void newModule(String mName, String mDesc, String mDeadline, String mPublished, PrintWriter out){
-        String strInsert = "INSERT INTO MODULE (m_name,  m_description, m_deadline, m_published) values ('" +mName + "', '" +mDesc + "', '"+mDeadline + "' '"+mPublished + "')";
+    public void newModule(int mId, String mName, String mDesc, String mDeadline, String mPublished, PrintWriter out){
+        String strInsert = "INSERT INTO MODULE (m_id, m_name,  m_description, m_deadline, m_published) values ('" +mId + "', '" +mName + "', '" +mDesc + "', '"+mDeadline + "' '"+mPublished + "')";
         out.println(strInsert);
 
         try {
