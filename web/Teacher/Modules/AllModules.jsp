@@ -17,7 +17,7 @@
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-        String query = "SELECT m_id, m_name, m_deadline, m_description, m_published FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
+        String query = "SELECT * FROM MODULE ORDER BY m_id ASC;";
         //connect til db
         
     try {
