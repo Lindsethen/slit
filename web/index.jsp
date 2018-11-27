@@ -48,10 +48,12 @@
          
         <form action="LoginServlet" method="Post">
 
-            <p class="text-white">Enter Username: </p> <input type="text" name="uname"><br>
-            <p class="text-white">Enter Password: </p> <input type="password" name="pass"><br>  
-        
-
+            <p class="text-white">Enter Username: </p> <input type="text" name="uname">
+            <br>
+            <br>
+            <p class="text-white">Enter Password: </p> <input type="password" name="pass"> 
+            <br>
+            <br>
             <input type="submit" value="login">
             
         </form>
