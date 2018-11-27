@@ -45,9 +45,10 @@ and open the template in the editor.
         <a href="ClassMembers.jsp" class="text-white">Klassemedlemmer</a>
         <br>
         <br>
-
+        <br>
+        <br>
+        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
         </div>
-        <a href="../index.jsp" class="text-black">Tilbake til forsiden</a>
         <form action="../../LogoutServlet">
 
             <input type="submit" value="Logg ut">
