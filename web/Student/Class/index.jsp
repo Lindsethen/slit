@@ -46,10 +46,13 @@ and open the template in the editor.
         <br>
         <br>
 
-        <a href="../index.jsp" class="text-white">Tilbake til forside</a>
-      
         </div>
-        
+        <a href="../index.jsp" class="text-black">Tilbake til forside</a>
+        <form action="../../LogoutServlet">
+
+            <input type="submit" value="Logg ut">
+
+        </form>
         
     </body>
 
