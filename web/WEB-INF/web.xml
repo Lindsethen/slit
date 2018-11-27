@@ -80,6 +80,10 @@
         <servlet-name>EditSpecific</servlet-name>
         <servlet-class>LearningUtil.EditSpecific</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditSpecificModule</servlet-name>
+        <servlet-class>ModuleUtil.EditSpecificModule</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -155,6 +159,10 @@
     <servlet-mapping>
         <servlet-name>EditSpecific</servlet-name>
         <url-pattern>/Teacher/LearningGoals/EditSpecific</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSpecificModule</servlet-name>
+        <url-pattern>/EditSpecificModule</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
