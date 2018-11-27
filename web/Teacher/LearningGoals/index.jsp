@@ -33,22 +33,22 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container">
-        <h1>LÃ¦remÃ¥l</h1>
+        <h1>Læremål</h1>
         </div>
         <br>
         <div class="jumbotron">
-                    <a href="LearningGoalReg.html" class = "text-white">Legg til lÃ¦remÃ¥l</a>
+                    <a href="LearningGoalReg.html" class = "text-white">Legg til læremål</a>
                     &nbsp;
                     &nbsp;
-                    <a href="AllGoals.jsp" class = "text-white">List alle lÃ¦remÃ¥l</a>
+                    <a href="AllGoals.jsp" class = "text-white">List alle læremål</a>
                     &nbsp;
                     &nbsp;
-                    <a href="EditLearningGoal.html" class ="text-white">Rediger lÃ¦remÃ¥l</a>
+                    <a href="EditLearningGoal.html" class ="text-white">Rediger læremål</a>
                     <br>
                     <br>
                     <br>
                     <br>
-                    <a href="../index.html" class="text-white">Tilbake til forside</a>
+                    <a href="../index.jsp" class="text-white">Tilbake til forside</a>
         </div>
 
     </body>

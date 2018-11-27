@@ -40,18 +40,18 @@ and open the template in the editor.
         </div>
         
         <div class="jumbotron">
-        
-        <a href="../ModuleReg.html" class ="text-white">Registrer ny modul</a>
-            &nbsp;
-            &nbsp;
+            
         <a href="../AllModules.jsp" class ="text-white">Liste av moduler</a>
-            &nbsp;
-            &nbsp;
-        <a href="../DeleteModule.html" class ="text-white">Slett modul</a>
         
         </div>
     </body>
+    
+    <form action="../../LogoutServlet">
 
+              <input type="submit" value="Logout">
+
+    </form>
+    
       <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
