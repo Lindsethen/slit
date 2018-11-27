@@ -40,7 +40,7 @@
           String mDeadline = rs.getString("m_deadline");
           String mPublished = rs.getString("m_published");
           // kjøres for hver row med følgende format:
-          sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s", id, mName, mDesc, mDeadline, mPublished);
+          sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s <br> Published: %s", id, mName, mDesc, mDeadline, mPublished);
           sqlWriter.format("<br><form method=\"post\" action=\"DeleteModuleServlet?UID=" + id +"\">");
           sqlWriter.println("<input type=\"submit\" value=\"SLETT MODUL\">");
           sqlWriter.println("</form>");
