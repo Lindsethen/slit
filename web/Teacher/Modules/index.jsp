@@ -41,7 +41,7 @@ and open the template in the editor.
         
         <div class="jumbotron">
         
-        <a href="ModuleReg.html" class ="text-white">Registrer ny modul</a>
+        <a href="ModuleReg.jsp" class ="text-white">Registrer ny modul</a>
             &nbsp;
             &nbsp;
         <a href="../../ListModules" class ="text-white">Liste av moduler</a>

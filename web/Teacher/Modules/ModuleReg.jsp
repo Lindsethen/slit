@@ -34,16 +34,16 @@ and open the template in the editor.
 </head>
 <body>
     <div class="container">
-<h1>Hvilken modul vil du fjerne?</h1>
+<h1>Hvilken modul vil du legge til?</h1>
     </div>
 <br>
 
 <div class="jumbotron">
 
-<form action="../../DeleteModuleServlet" method="post">
+<form action="../../NewModuleServlet" method="post">
     <input type="text" name="UID" placeholder="ModulID">
     <br>
-    <input type="submit" value="submit">
+    <input type="submit" value="Legg til">
         <br>
         <br>
         <br>
