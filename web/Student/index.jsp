@@ -59,6 +59,9 @@ and open the template in the editor.
             &nbsp;
             &nbsp;
             <a href="Class" class = "text-white">Klasse</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
 
         </div>
 
