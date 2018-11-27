@@ -43,7 +43,7 @@ and open the template in the editor.
 <form action="../../DeleteModuleServlet" method="post">
     <input type="text" name="UID" placeholder="ModulID">
     <br>
-    <input type="submit" value="submit">
+    <input type="submit" value="Fjern">
         <br>
         <br>
         <br>

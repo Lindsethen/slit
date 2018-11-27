@@ -56,6 +56,10 @@
             }
             %>
             </ul>
-           
+           <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="../index.jsp" class="text-white">Tilbake til forside</a>
     </body>
 </html>
