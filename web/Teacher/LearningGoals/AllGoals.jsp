@@ -54,6 +54,8 @@
             }
             %>
             </ul>
-    
+    <h4>
+    <a href="../../index.jsp">Tilbake til forsiden</a>
+    </h4>
     </body>
 </html>
