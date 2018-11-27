@@ -42,7 +42,9 @@ and open the template in the editor.
 
 <form action="../../NewModuleServlet" method="post">
     <input type="text" name="UID" placeholder="Modulnamn">
+    <br>
     <input type="text" name="MDesc" placeholder="Modulbeskrivelse">
+    <br>
     <input type="submit" value="Legg til">
         <br>
         <br>
