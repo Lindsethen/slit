@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<!-- Bootstrap - Joakim -->
 
 <html lang="en">
   <head>
@@ -29,43 +30,29 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
-
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="container">
-        <h1>Studenter-PLACEHOLDER</h1>
-        <h3>Liste av studenter med kontaktinformasjon osv</h3>
+        <h1>Moduler</h1>
         </div>
 
         <div class="jumbotron">
 
-        <a href="ClassMembers.jsp" class="text-white">Klassemedlemmer</a>
-            &nbsp;
-            &nbsp;
-        <a href="UserReg.html"class="text-white">Link 2</a>
-            &nbsp;
-            &nbsp;
-        <a href="UserDelete.html" class="text-white">Link 3</a>
-            &nbsp;
-            &nbsp;
-        <a href="EditUser.html"class="text-white">Link 4</a>
-        <br>
-        <br>
-        <br>
-        <br>
+        <a href="../../../../AllModules.jsp" class ="text-white">Liste av moduler</a>
 
-         <a href="../index.jsp" class="text-white">Tilbake til index</a>
-      
         </div>
-        
-        
     </body>
+    <a href="../index.jsp" class="text-black">Tilbake til forsiden</a>
+    <form action="../../LogoutServlet">
 
+              <input type="submit" value="Logg ut">
 
-  <!-- Optional JavaScript -->
+    </form>
+
+      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : UploadHandin
     Created on : 26.nov.2018, 12:31:12
     Author     : Henrik
@@ -41,14 +41,14 @@
 </head>
 <body>
     <center>
-        
+
         <div class="container">
         <h1>Filopplastning for modul</h1>
         </div>
-       
+
         <div class="jumbotron">
             <div class="container">
-        <form method="post" action="../../UploadHandin" enctype="multipart/form-data">
+        <form method="post" action="../../UploadHandin.java" enctype="multipart/form-data">
             <table border="0">
                 <tr>
                     <td>Student: </td>
@@ -64,14 +64,16 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                <br>    
-                    <input type="submit" value="Save">
-                    <br>
-                    <br>
-                     <a href="../index.jsp" class="text-white">Tilbake til index</a>
+                        <input type="submit" value="Save">
                     </td>
                 </tr>
             </table>
+        </form>
+
+        <form action="../../LogoutServlet">
+
+              <input type="submit" value="Logg ut">
+
         </form>
             </div>
         </div>

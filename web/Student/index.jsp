@@ -54,7 +54,7 @@ and open the template in the editor.
             &nbsp;
             &nbsp;
             &nbsp;
-            <a href="Handins" class = "text-white">Handins</a>
+            <a href="Handins" class = "text-white">Innleveringer</a>
             &nbsp;
             &nbsp;
             &nbsp;
@@ -64,10 +64,10 @@ and open the template in the editor.
             &nbsp;
 
         </div>
-
+            
             <form action="../LogoutServlet">
 
-              <input type="submit" value="Logout">
+              <input type="submit" value="Logg ut">
 
             </form>
 

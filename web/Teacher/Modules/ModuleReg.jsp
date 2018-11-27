@@ -34,23 +34,26 @@ and open the template in the editor.
 </head>
 <body>
     <div class="container">
-<h1>Hvilken modul vil du endre?</h1>
+<h1>Hvilken modul vil du legge til?</h1>
     </div>
 <br>
 
 <div class="jumbotron">
 
-<form action="../../DeleteModuleServlet" method="post">
-    <input type="text" name="UID" placeholder="ModulID">
+<form action="../../NewModuleServlet" method="post">
+    <input type="text" name="UID" placeholder="Modulnavn">
     <br>
-    <input type="submit" value="submit">
+    <input type="text" name="MDesc" placeholder="Modulbeskrivelse">
+    <br>
+    <br>
+    <input type="submit" value="Legg til">
         <br>
         <br>
         <br>
         <br>
 
-        <a href="../index.jsp" class="text-white">Tilbake til index</a>
-    
+        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
+
 </div>
 
 </body>
