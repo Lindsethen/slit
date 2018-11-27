@@ -26,16 +26,12 @@ public class NewModuleServlet extends HttpServlet {
             //String numString;
             String mName;
             String mDesc;
-            String mDeadline;
-            String mPublished;
             //int mNum;
             
             //Henter info fra forrige side
             //numString = request.getParameter("mNum");
             mName = request.getParameter("mName");
             mDesc = request.getParameter("mDesc");
-            mDeadline = request.getParameter("mDeadline");
-            mPublished = request.getParameter("mPublished");
             //Gjør om string til int
             //mNum = Integer.parseInt(numString); 
             //Printer pynt
@@ -47,7 +43,7 @@ public class NewModuleServlet extends HttpServlet {
             NewModule dbtool = new NewModule();
             //logIn(out) skriver ut ex fra DbUtil
             dbtool.logIn(out);
-            dbtool.newModule(mName, mDesc, mDeadline, mPublished, out);
+            dbtool.newModule(mName, mDesc, out);
             dbtool.commit();
             dbtool.close();
 
