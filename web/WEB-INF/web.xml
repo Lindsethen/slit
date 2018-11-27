@@ -80,6 +80,10 @@
         <servlet-name>EditSpecificModule</servlet-name>
         <servlet-class>ModuleUtil.EditSpecificModule</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteModulesServlet</servlet-name>
+        <servlet-class>ModuleUtil.DeleteModulesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -109,7 +113,7 @@
         <url-pattern>/EditUserServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>DeleteModuleServlet</servlet-name>
+        <servlet-name>DeleteModulesServlet</servlet-name>
         <url-pattern>/Teacher/Modules/DeleteModuleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
