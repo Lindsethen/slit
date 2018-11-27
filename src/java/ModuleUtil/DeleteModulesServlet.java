@@ -8,20 +8,16 @@ package ModuleUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author Kristian
+ */
+public class DeleteModulesServlet extends HttpServlet {
 
-
-    /**
-     *
-     */
-@WebServlet(name = "DeleteModuleServlet", urlPatterns = {"/DeleteModuleServlet"})
-public class DeleteModuleServlet extends HttpServlet {
-//int fordi det lagres som int i MySQL
-int ModuleID;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,46 +27,60 @@ int ModuleID;
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
-     //starter servlet (post/get metodene kjører void processRequest)
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        //starter HTML Skriving / Lager printwriter som kalles ".out"
         try (PrintWriter out = response.getWriter()) {
-            //Henter ID fra forrige side (/user/deleteModule.html) og gjør om til int fra string
-            String idString = request.getParameter("UID");
-            ModuleID = Integer.parseInt(idString);
-            //kjører DeleteModules.deleteID med int ModuleID som parameter. =new fordi deleteID er en statisk funksjon
-            DeleteModules delClass = new DeleteModules();
-            delClass.deleteID(ModuleID);
-            //Printer mer HTML
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet DeleteModulesServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("Slettet modul nummer " +idString);
+            out.println("<h1>Servlet DeleteModulesServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-}
-/**
- *
- * @author Ludamac
- */
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
+}
