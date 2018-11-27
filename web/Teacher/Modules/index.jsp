@@ -51,10 +51,11 @@ and open the template in the editor.
             &nbsp;
             &nbsp;
         <a href="../../EditModuleServlet" class ="text-white">Endre modul</a>
-        
-        <h4>
+        <br>
+        <br>
+        <br>
+        <br>
         <a href="../index.jsp">Tilbake til indeks</a>
-        </h4>
         
         
         </div>
