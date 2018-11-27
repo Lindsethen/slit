@@ -61,7 +61,7 @@ and open the template in the editor.
             <a href="Class" class = "text-white">Klasse</a>
 
         </div>
-
+            
             <form action="../LogoutServlet">
 
               <input type="submit" value="Logout">
