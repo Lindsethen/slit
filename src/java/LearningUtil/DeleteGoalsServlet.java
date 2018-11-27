@@ -39,7 +39,7 @@ String idString = null;
             goalID = Integer.parseInt(idString);
             //kjører DeleteModules.deleteID med int goalID som parameter. =new fordi deleteID er en statisk funksjon
             DeleteGoals delClass = new DeleteGoals();
-            delClass.deleteGoal(goalID);
+            delClass.deleteGoal(idString);
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");

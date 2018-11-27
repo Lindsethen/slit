@@ -4,7 +4,6 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<!-- Bootstrap - Joakim -->
 
 <html lang="en">
   <head>
@@ -13,7 +12,7 @@ and open the template in the editor.
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-   
+
     <style>
 .jumbotron{
     background-color:#7C01BA;
@@ -30,29 +29,33 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="container">
-        <h1>Moduler</h1>
-        </div>
-        
-        <div class="jumbotron">
-        
-        <a href="../ModuleReg.html" class ="text-white">Registrer ny modul</a>
-            &nbsp;
-            &nbsp;
-        <a href="../AllModules.jsp" class ="text-white">Liste av moduler</a>
-            &nbsp;
-            &nbsp;
-        <a href="../DeleteModule.html" class ="text-white">Slett modul</a>
-        
-        </div>
-    </body>
 
-      <!-- Optional JavaScript -->
+    <title>Hvilken modul ønsker du å slette?</title>
+</head>
+<body>
+    <div class="container">
+<h1>Hvilker modul ønsker du å slette?</h1>
+    </div>
+<br>
+
+<div class="jumbotron">
+
+<form action="../../DeleteModuleServlet" method="post">
+    <input type="text" name="UID" placeholder="ModulID">
+    <br>
+    <input type="submit" value="submit">
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <a href="../index.jsp" class="text-white">Tilbake til forside</a>
+    
+</div>
+
+</body>
+
+  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

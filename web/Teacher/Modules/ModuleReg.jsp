@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -29,19 +30,18 @@ and open the template in the editor.
 }
 </style>
 
-
-    <title>Register user</title>
+    <title>Delete user</title>
 </head>
 <body>
     <div class="container">
-<h1>Please input module data</h1>
+<h1>Which module do you want to delete?</h1>
     </div>
 <br>
+
 <div class="jumbotron">
-<form action="../NewModuleServlet" method="post">
-    <input type="text" name="mName" placeholder="Module name">
-    <br>
-    <input type="text" name="mDesc" placeholder="Module description">
+
+<form action="../../DeleteModuleServlet" method="post">
+    <input type="text" name="UID" placeholder="ModulID">
     <br>
     <input type="submit" value="submit">
         <br>
@@ -49,11 +49,11 @@ and open the template in the editor.
         <br>
         <br>
 
-        <a href="../index.html" class="text-white">Tilbake til index</a>
+        <a href="../index.jsp" class="text-white">Tilbake til index</a>
+    
 </div>
 
-
-
+</body>
 
   <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
