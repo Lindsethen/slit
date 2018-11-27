@@ -122,7 +122,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditModuleServlet</servlet-name>
-        <url-pattern>/EditModuleServlet</url-pattern>
+        <url-pattern>/Teacher/Modules/EditModuleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OverviewServlet</servlet-name>
@@ -162,7 +162,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditSpecificModule</servlet-name>
-        <url-pattern>/EditSpecificModule</url-pattern>
+        <url-pattern>/Teacher/Modules/EditSpecificModule</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

@@ -48,6 +48,9 @@
           sqlWriter.format("<br><form method=\"post\" action=\"DeleteModuleServlet?UID=" + id +"\">");
           sqlWriter.println("<input type=\"submit\" value=\"SLETT MODUL\">");
           sqlWriter.println("</form>");
+          sqlWriter.format("<form method=\"post\" action=\"EditSpecificModule?MID=%s\">", id);
+          sqlWriter.println("<input type=\"submit\" value=\"Rediger\">");
+          sqlWriter.println("</form>");
         }
     
       //lukker tilkoblingen
