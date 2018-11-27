@@ -72,7 +72,7 @@ public class EditGoalServlet extends HttpServlet {
                 System.out.println(e);
             }
             
-            out.println("<br><a href=/Teacher/LearningGoals/AllGoals.jsp>Tilbake til læremål</a>");
+            out.println("<br><a href=Teacher/LearningGoals/AllGoals.jsp>Tilbake til læremål</a>");
             out.println("</body>");
             out.println("</html>");
         }
