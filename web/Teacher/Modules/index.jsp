@@ -50,7 +50,12 @@ and open the template in the editor.
         <a href="../../DeleteModule.html" class ="text-white">Slett modul</a>
             &nbsp;
             &nbsp;
-        <a href="../../EditModuleServlet" class ="text-white">Endre modul</a>        
+        <a href="../../EditModuleServlet" class ="text-white">Endre modul</a>
+        
+        <h4>
+        <a href="../../index.jsp">Tilbake til indeks</a>
+        </h4>
+        
         
         </div>
     </body>

@@ -68,9 +68,11 @@ and open the template in the editor.
         
             <form action="../LogoutServlet">
               
-              <input type="submit" value="Logout">
+              <input type="submit" value="Logg ut">
           
             </form>
+        
+        
         
     </body>
 
