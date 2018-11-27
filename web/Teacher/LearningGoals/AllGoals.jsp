@@ -39,6 +39,7 @@
           String moduleName = rs.getString("m_name");
           int mID = rs.getInt("m_id");
           // kjøres for hver row med følgende format:
+           
           sqlWriter.format("<li>Number:%s </br> Description: %s <br> Koblet til modulen: %s", id, lgString, moduleName);
           sqlWriter.format("<br><form method=\"post\" action=\"DeleteGoalsServlet?UID=" + id +"\">");
           sqlWriter.println("<input type=\"submit\" value=\"SLETT LÆREMÅL\">");
@@ -46,6 +47,7 @@
           sqlWriter.format("<form method=\"post\" action=\"EditSpecific?GID=%s&moduleID=%s\">", id, mID);
           sqlWriter.println("<input type=\"submit\" value=\"Rediger\">");
           sqlWriter.println("</form>");
+          
         }
          //lukker tilkoblingen
          stmt.close();
