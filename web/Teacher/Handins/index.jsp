@@ -4,8 +4,6 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<!-- Bootstrap - Joakim -->
-
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -17,7 +15,7 @@ and open the template in the editor.
     <style>
 .jumbotron{
     background-color:#7C01BA;
-    color:purple;
+    color:grey;
 }
 /* Adds borders for tabs */
 .tab-content {
@@ -30,50 +28,21 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
-        <title>SLIT</title>
+        <title>Innleveringer</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>        
-     <div class="container">
-       <h1>Lærerfunksjoner</h1>
-       <%
-            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-            if (session.getAttribute("username")==null)
-            {
-                response.sendRedirect("login.jsp");
-            }
-
-        %>
-           Velkommen ${username}
-     </div>
+    <body>
+        <div class="container">
+        <h1>Innleveringer</h1>
+        </div>
         <br>
         <div class="jumbotron">
-            
-            <a href="./Modules/index.jsp" class ="text-white">Moduler</a>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <a href="LearningGoals" class = "text-white">Læremål</a>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <a href="Users" class = "text-white">Brukere</a>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <a href="Handins" class = "text-white">Innleveringer</a>
-
+                    <a href="ListHandins" class = "text-white">Alle innleveringer</a>
+                    &nbsp;
+                    &nbsp;
+                    <a href="../../OverviewServlet" class = "text-white">Oversikt</a>
         </div>
-        
-            <form action="../LogoutServlet">
-              
-              <input type="submit" value="Logg ut">
-          
-            </form>
-        
-        
-        
+
     </body>
 
   <!-- Optional JavaScript -->

@@ -88,6 +88,14 @@
         <servlet-name>ModuleInspector</servlet-name>
         <servlet-class>ModuleUtil.ModuleInspector</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Grader</servlet-name>
+        <servlet-class>HandinUtil.Grader</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Inspector</servlet-name>
+        <servlet-class>HandinUtil.Inspector</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -171,6 +179,14 @@
     <servlet-mapping>
         <servlet-name>ModuleInspector</servlet-name>
         <url-pattern>/Student/Modules/ModuleInspector</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Grader</servlet-name>
+        <url-pattern>/Teacher/Handins/Grader</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inspector</servlet-name>
+        <url-pattern>/Teacher/Handins/Inspector</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
