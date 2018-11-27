@@ -37,7 +37,6 @@ int userID;
         response.setContentType("text/html;charset=UTF-8");
         //starter HTML Skriving / Lager printwriter som kalles ".out"
         try (PrintWriter out = response.getWriter()) {
-            //Henter ID fra forrige side (/user/deleteuser.html) og gjør om til int fra string
             String idString = request.getParameter("UID");
             userID = Integer.parseInt(idString);
             //kjører DeleteUsers.deleteID med int userID som parameter. =new fordi deleteID er en statisk funksjon
