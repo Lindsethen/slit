@@ -41,7 +41,7 @@ and open the template in the editor.
 
 <div class="jumbotron">
 
-<form action="../../NewModuleServlet" method="post">
+<form action="../../NewModuleServlet" method="Post">
     <input type="text" name="mId" placeholder="ModulID">
     <br>
     <input type="text" name="mName" placeholder="Modulnavn">

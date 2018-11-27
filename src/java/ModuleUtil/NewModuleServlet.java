@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
 @WebServlet(name = "NewModuleServlet", urlPatterns = {"/NewModuleServlet"})
 public class NewModuleServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -56,8 +57,8 @@ public class NewModuleServlet extends HttpServlet {
 
             out.println("</body>");
             out.println("</html>");
-
-        }
+        }    
+        
     }
 
 
@@ -71,6 +72,7 @@ public class NewModuleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
     }
 
 
