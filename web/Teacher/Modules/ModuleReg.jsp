@@ -52,7 +52,7 @@ and open the template in the editor.
         <br>
         <br>
 
-        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>>
+        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
     
 </div>
 
