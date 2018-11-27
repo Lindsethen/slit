@@ -4,7 +4,6 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<!-- Bootstrap - Joakim -->
 
 <html lang="en">
   <head>
@@ -30,29 +29,35 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
+
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="container">
-        <h1>Moduler</h1>
+        <h1>Klasse i Kurs IS-109 & IS-110</h1>
+        <h3>Liste av studenter med kontaktinformasjon</h3>
         </div>
 
         <div class="jumbotron">
 
-        <a href="../ModuleReg.html" class ="text-white">Registrer ny modul</a>
-            &nbsp;
-            &nbsp;
+        <a href="ClassMembers.jsp" class="text-white">Klassemedlemmer</a>
+        <br>
+        <br>
 
-        <a href="../DeleteModule.html" class ="text-white">Slett modul</a>
-            &nbsp;
-            &nbsp;
-        <a href="AllModules.jsp" class ="text-white">Liste av moduler</a>
         </div>
+        <a href="../index.jsp" class="text-black">Tilbake til forsiden</a>
+        <form action="../../LogoutServlet">
+
+            <input type="submit" value="Logg ut">
+
+        </form>
+
     </body>
 
-      <!-- Optional JavaScript -->
+
+  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -30,11 +30,11 @@ and open the template in the editor.
 }
 </style>
 
-    <title>Hvilken modul ønsker du å slette?</title>
+    <title>Delete user</title>
 </head>
 <body>
     <div class="container">
-<h1>Hvilker modul ønsker du å slette?</h1>
+<h1>Hvilken modul vil du fjerne?</h1>
     </div>
 <br>
 
@@ -43,14 +43,14 @@ and open the template in the editor.
 <form action="../../DeleteModuleServlet" method="post">
     <input type="text" name="UID" placeholder="ModulID">
     <br>
-    <input type="submit" value="submit">
+    <input type="submit" value="Fjern">
         <br>
         <br>
         <br>
         <br>
 
-        <a href="../index.jsp" class="text-white">Tilbake til forside</a>
-    
+        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
+
 </div>
 
 </body>

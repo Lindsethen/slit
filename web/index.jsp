@@ -48,17 +48,15 @@
          
         <form action="LoginServlet" method="Post">
 
-            <p class="text-white">Enter Username: </p> <input type="text" name="uname">
+            <p class="text-white">Skriv inn brukernavn: </p> <input type="text" name="uname">
             <br>
             <br>
-            <p class="text-white">Enter Password: </p> <input type="password" name="pass"> 
+            <p class="text-white">Skriv inn passord: </p> <input type="password" name="pass"> 
             <br>
             <br>
-            <input type="submit" value="login">
-            
+            <input type="submit" value="Logg inn">    
         </form>
             </div>
-    
     </body>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

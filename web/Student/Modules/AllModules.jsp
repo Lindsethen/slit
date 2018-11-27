@@ -13,12 +13,11 @@
         <title>Alle moduler</title>
     </head>
     <body>
-        <h1>Alle Moduler!</h1>
         <%
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-        String query = "SELECT m_id, m_name, m_deadline, m_description, m_published FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
+        String query = "SELECT m_id, m_name, m_deadline, m_description FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
         //connect til db
     try {
         conn = DbUtil.ConnectionManager.getConnection();
@@ -28,22 +27,18 @@
     
 
       // itererer gjennom hele listen (resultset rs)
+            out.println("<h2>Alle læremål</h2>");
             out.println("<ul>");
       while (rs.next())
         {
             //lager ny printer med navn sqlWriter og skriver ut i HTML format
           PrintWriter sqlWriter = response.getWriter();
           //hvilke columns som skal kalles hva (SQL -> Java)
-          int id = rs.getInt("m_id");
           String mName = rs.getString("m_name");
           String mDesc = rs.getString("m_description");
           String mDeadline = rs.getString("m_deadline");
-          String mPublished = rs.getString("m_published");
           // kjøres for hver row med følgende format:
-          sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s", id, mName, mDesc, mDeadline, mPublished);
-          sqlWriter.format("<br><form method=\"post\" action=\"DeleteModuleServlet?UID=" + id +"\">");
-          sqlWriter.println("<input type=\"submit\" value=\"SLETT MODUL\">");
-          sqlWriter.println("</form>");
+          sqlWriter.format("<li>Modulnavn: %s<br> Beskrivelse: %s <br> Frist: <b>%s</b><br>", mName, mDesc, mDeadline);
         }
     
       //lukker tilkoblingen
@@ -52,10 +47,15 @@
     }
             catch (Exception e)
             {
-              System.err.println("Got an exception! ");
+              System.err.println("Det oppstod en feil! ");
               System.err.println(e.getMessage());
             }
             %>
             </ul>
+           <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
     </body>
 </html>

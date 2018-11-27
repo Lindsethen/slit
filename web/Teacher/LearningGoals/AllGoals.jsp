@@ -15,7 +15,7 @@
     </head>
     <body>
         <h1>Alle læremål</h1>
-        <% 
+        <%
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -28,7 +28,7 @@
         rs = stmt.executeQuery(query);
         // itererer gjennom hele listen (resultset rs)
             out.println("<ul>");
-      
+
                 while (rs.next())
         {
           //lager ny printer med navn sqlWriter og skriver ut i HTML format
@@ -49,16 +49,18 @@
         }
          //lukker tilkoblingen
          stmt.close();
-        
+
         //henter og sender feilmeldinger
     }
             catch (Exception e)
             {
-              System.err.println("Got an exception!");
+              System.err.println("Det oppstod en feil!");
               System.err.println(e.getMessage());
             }
             %>
             </ul>
-    <a href="../index.jsp" class="text-white">Tilbake til index</a>
+    <h4>
+    <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
+    </h4>
     </body>
 </html>
