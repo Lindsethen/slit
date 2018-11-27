@@ -73,7 +73,7 @@
                 <br>
                 <br>
                 <br>
-                
+
                 <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
 
         <form action="../../LogoutServlet">
