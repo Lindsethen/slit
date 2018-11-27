@@ -67,7 +67,8 @@ public class ListModuleServlet extends HttpServlet {
           boolean isPublished = rs.getBoolean("m_published");
           if (isPublished) {
               publishedString = "Yes";
-                      } else { publishedString = "No"; }
+                      } 
+          else { publishedString = "No"; }
           // kjøres for hver row med følgende format:
           sqlWriter.format("<li>Number:%s Name: %s</br> Description: %s <br> Deadline: %s <br>Published: %s", id, mName, mDesc, mDeadline, publishedString);
           sqlWriter.format("<br><form method=\"post\" action=\"DeleteModuleServlet?UID=" + id +"\">");
