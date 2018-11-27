@@ -45,6 +45,12 @@ and open the template in the editor.
             &nbsp;
             &nbsp;
         <a href="DeleteModule.jsp" class ="text-white">Slett moduler</a>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <a href="../index.jsp" class="text-white">Tilbake til index</a>
         
         </div>
     </body>
