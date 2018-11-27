@@ -28,7 +28,7 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
-        <title>LÃ¦remÃ¥l</title>
+        <title>Læremål</title>
         <meta charset="UTF-8">
     </head>
     <body>

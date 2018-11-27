@@ -84,6 +84,10 @@
         <servlet-name>DeleteModulesServlet</servlet-name>
         <servlet-class>ModuleUtil.DeleteModulesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ModuleInspector</servlet-name>
+        <servlet-class>ModuleUtil.ModuleInspector</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -163,6 +167,10 @@
     <servlet-mapping>
         <servlet-name>EditSpecificModule</servlet-name>
         <url-pattern>/Teacher/Modules/EditSpecificModule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModuleInspector</servlet-name>
+        <url-pattern>/Student/Modules/ModuleInspector</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

@@ -14,11 +14,16 @@
     </head>
     <body>
         <%
+            out.println("<h2>Alle moduler</h2>");
+            out.println("<ul>");
+        %>
+        <%
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
         String query = "SELECT m_id, m_name, m_deadline, m_description FROM MODULE WHERE m_published = 1 ORDER BY m_id ASC;";
         //connect til db
+        
     try {
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
@@ -27,8 +32,6 @@
     
 
       // itererer gjennom hele listen (resultset rs)
-            out.println("<h2>Alle læremål</h2>");
-            out.println("<ul>");
       while (rs.next())
         {
             //lager ny printer med navn sqlWriter og skriver ut i HTML format
@@ -36,9 +39,13 @@
           //hvilke columns som skal kalles hva (SQL -> Java)
           String mName = rs.getString("m_name");
           String mDesc = rs.getString("m_description");
+          String moduleID = rs.getString("m_id");
           String mDeadline = rs.getString("m_deadline");
           // kjøres for hver row med følgende format:
           sqlWriter.format("<li>Modulnavn: %s<br> Beskrivelse: %s <br> Frist: <b>%s</b><br>", mName, mDesc, mDeadline);
+          sqlWriter.format("<form method=\"post\" action=\"ModuleInspector?MID=%s&mName=%s\">", moduleID, mName);
+          sqlWriter.println("<input type=\"submit\" value=\"Se læremål\">");
+          sqlWriter.println("</form>");
         }
     
       //lukker tilkoblingen
@@ -52,10 +59,7 @@
             }
             %>
             </ul>
-           <br>
-                    <br>
-                    <br>
-                    <br>
-                    <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
+            <br> 
+                <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
     </body>
 </html>
