@@ -14,40 +14,43 @@ import java.sql.*;
 public class EditModule {
     private Connection conn = null;
     private Statement stmt = null;
-    String newModule;
+    int number;
     String sqlQuery;
     String newName;
     String newDescription;
     String newDeadline;
-    int ModuleID;
+    String moduleID;
+    boolean isPublished;
    
-    public void changeModule(String moduleString, int ModuleID){
-    
-    newModule = moduleString;
-    ModuleID = this.ModuleID;
-    sqlQuery = "UPDATE MODULE SET m_id = " + newModule + " WHERE m_id" + ModuleID;
-    try {
-        conn = DbUtil.ConnectionManager.getConnection();
-        stmt = conn.createStatement();
-        //sender query til MYSQL
-        stmt.executeUpdate(sqlQuery);
-    }
-        catch (Exception ex) {
-            System.out.println("Noe gikk galt:");
-            System.out.println(ex);
+    public void changeID(int newNum, String mID){
+        number = newNum;
+        moduleID = mID;
+        
+        sqlQuery = "UPDATE MODULE SET m_id = " + number + " WHERE m_id = " + moduleID + ";";
+        try {
+            conn = DbUtil.ConnectionManager.getConnection();
+            stmt = conn.createStatement();
+            //sender query til MYSQL
+            stmt.executeUpdate(sqlQuery);
+            stmt.close();
         }
-    }
+            catch (Exception ex) {
+                System.out.println("Noe gikk galt:");
+                System.out.println(ex);
+            }
+        }
     
-    public void changeName(String nameString, int ModuleID){
+    public void changeName(String nameString, String mID){
         
         newName = nameString;
-        ModuleID = this.ModuleID;
-        sqlQuery = "UPDATE MODULE SET m_name = " + newName + " WHERE m_name" + ModuleID;
+        moduleID = mID;
+        sqlQuery = "UPDATE MODULE SET m_name = " + "\"" +  newName + "\"" + " WHERE m_id = " + moduleID + ";";
         try {
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
         //sender query til MYSQL
         stmt.executeUpdate(sqlQuery);
+        stmt.close();
     }
         catch (Exception ex) {
             System.out.println("Noe gikk galt:");
@@ -55,36 +58,53 @@ public class EditModule {
         }
         
     }
-    public void changeDescription(String descriptionString, int ModuleID){
+    public void changeDescription(String descriptionString, String mID){
         newDescription = descriptionString;
-        ModuleID = this.ModuleID;
-        sqlQuery = "UPDATE MODULE SET m_description = " + newDescription + "WHERE m_description" + ModuleID;
+        moduleID = mID;
+        sqlQuery = "UPDATE MODULE SET m_description = " + "\"" + newDescription + "\"" + " WHERE m_id = " + moduleID + ";";
         try {
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
         //sender query til MYSQL
         stmt.executeUpdate(sqlQuery);
+        stmt.close();
     }
         catch (Exception ex) {
             System.out.println("Noe gikk galt:");
             System.out.println(ex);
         }
     }
-    public void changeDeadline(String deadlineString, int ModuleID){
+    public void changeDeadline(String deadlineString, String mID){
         newDeadline = deadlineString;
-        ModuleID = this.ModuleID;
-        sqlQuery = "UPDATE MODULE SET m_deadline = " + newDeadline + "WHERE m_deadline" + ModuleID;
+        moduleID = mID;
+        sqlQuery = "UPDATE MODULE SET m_deadline = " + "'" + newDeadline + "'" + " WHERE m_id = " + moduleID + ";";
         try {
         conn = DbUtil.ConnectionManager.getConnection();
         stmt = conn.createStatement();
         //sender query til MYSQL
         stmt.executeUpdate(sqlQuery);
+        stmt.close();
     }
         catch (Exception ex) {
             System.out.println("Noe gikk galt:");
             System.out.println(ex);
         }
     }
-    
+    public void changePublished(boolean published, String mID){
+        moduleID = mID;
+        isPublished = published;
+        sqlQuery = "UPDATE MODULE SET m_published = " + isPublished + " WHERE m_id = " + moduleID + ";";
+        try {
+        conn = DbUtil.ConnectionManager.getConnection();
+        stmt = conn.createStatement();
+        //sender query til MYSQL
+        stmt.executeUpdate(sqlQuery);
+        stmt.close();
+    }
+        catch (Exception ex) {
+            System.out.println("Noe gikk galt:");
+            System.out.println(ex);
+        }
+    }
     }
 

@@ -40,8 +40,8 @@ and open the template in the editor.
 
 <div class="jumbotron">
 
-<form action="../../DeleteModulesServlet" method="post">
-    <input type="text" name="MID" placeholder="Modul ID">
+<form action="DeleteModuleServlet" method="post">
+    <input type="text" name="UID" placeholder="ModulID">
     <br>
     <input type="submit" value="Fjern">
         <br>
