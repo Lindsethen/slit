@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Kristian
  */
-@WebServlet(name = "DeleteModules", urlPatterns ={"/DeleteModulesServlet"})
+@WebServlet(name = "DeleteModules", urlPatterns ={"/DeleteModuleServlet"})
 public class DeleteModulesServlet extends HttpServlet {
 int ModuleID;
     /**
@@ -46,7 +46,7 @@ int ModuleID;
             out.println("</head>");
             out.println("<body>");
             out.println("Slettet modul nummer " +idString);
-            out.println("<br>Servlet DeleteModulesServlet at " + request.getContextPath() + "</br>");
+            out.println("<br><a href=../Modules>Tilbake</a>");
             out.println("</body>");
             out.println("</html>");
         }
