@@ -30,11 +30,11 @@ and open the template in the editor.
 }
 </style>
 
-    <title>Delete user</title>
+    <title>Hvilken modul ønsker du å slette?</title>
 </head>
 <body>
     <div class="container">
-<h1>Which module do you want to delete?</h1>
+<h1>Hvilker modul ønsker du å slette?</h1>
     </div>
 <br>
 
@@ -49,7 +49,7 @@ and open the template in the editor.
         <br>
         <br>
 
-        <a href="../index.jsp" class="text-white">Tilbake til index</a>
+        <a href="../index.jsp" class="text-white">Tilbake til forside</a>
     
 </div>
 
