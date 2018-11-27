@@ -30,7 +30,7 @@ and open the template in the editor.
 }
 </style>
 
-    <title>Delete user</title>
+    <title>Modul regestrering</title>
 </head>
 <body>
     <div class="container">
