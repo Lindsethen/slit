@@ -3,31 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ModuleUtil;
+package HandinUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.Connection;
+import java.sql.Statement;
 import java.sql.SQLException;
 
 /**
  *
  * @author Ludamac
  */
-public class ModuleInspector extends HttpServlet {
-String moduleID;
-String moduleName;
-String sqlQuery;
+public class Grader extends HttpServlet {
+String hiID;
 Connection conn = null;
 Statement stmt = null;
-ResultSet rs = null;
-String gDesc;
+String hiApproved;
+boolean isApproved;
+String sqlQuery;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,38 +41,31 @@ String gDesc;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-                moduleID = request.getParameter("MID");
-                moduleName = request.getParameter("mName");
-                sqlQuery = "SELECT lg_string FROM LEARNINGGOAL, MODULE WHERE fk_m_id = " + moduleID + " GROUP BY lg_id;";
-            
-                out.println("<!DOCTYPE html>");
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ModuleInspector</title>");            
+            out.println("<title>Servlet Grader</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Alle læremål for " + moduleName + "</h1>");
-            
             try {
+                hiID = request.getParameter("HID");
+                hiApproved = request.getParameter("approved");
+                    if ("true".equals(hiApproved)) {
+                    isApproved=true; } 
+                        else { isApproved=false; }
+                sqlQuery = "UPDATE handin SET hi_approved = " + isApproved + " WHERE hi_id = " + hiID + ";";
                 conn = DbUtil.ConnectionManager.getConnection();
                 stmt = conn.createStatement();
-                rs = stmt.executeQuery(sqlQuery);
-                PrintWriter sqlwriter = response.getWriter();
-                while (rs.next()) 
-                    {
-                    gDesc = rs.getString("lg_string");
-                    sqlwriter.println("<li>" + gDesc);
-                    }
-                } 
-                    catch(SQLException sex) {
-                    out.println("Det skjedde en feil med databasen: " + sex);
-                    }
-            out.println("<a href=AllModules.jsp>Tilbake</a>");
+                stmt.executeUpdate(sqlQuery);
+                if (isApproved) {
+                out.println("Innlevering godkjent"); }
+                else { out.println("Innlevering avslått"); }
+            } catch (SQLException ex) { out.println("Noe gikk feil med databasen: " + ex); 
             out.println("</body>");
             out.println("</html>");
-        }
+         }
+      }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ModuleUtil;
+package HandinUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,8 +20,8 @@ import java.sql.SQLException;
  *
  * @author Ludamac
  */
-public class ModuleInspector extends HttpServlet {
-String moduleID;
+public class Inspector extends HttpServlet {
+String hiID;
 String moduleName;
 String sqlQuery;
 Connection conn = null;
@@ -43,9 +43,8 @@ String gDesc;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-                moduleID = request.getParameter("MID");
-                moduleName = request.getParameter("mName");
-                sqlQuery = "SELECT lg_string FROM LEARNINGGOAL, MODULE WHERE fk_m_id = " + moduleID + " GROUP BY lg_id;";
+                hiID = request.getParameter("HID");
+                sqlQuery = "SELECT lg_string, hi_comment, hi_date FROM LEARNINGGOAL, MODULE WHERE fk_m_id = m_id and " + hiID + " GROUP BY hi_id;";
             
                 out.println("<!DOCTYPE html>");
             out.println("<html>");

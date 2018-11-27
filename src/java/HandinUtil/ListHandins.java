@@ -3,31 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ModuleUtil;
+package HandinUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.Connection;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 /**
  *
  * @author Ludamac
  */
-public class ModuleInspector extends HttpServlet {
-String moduleID;
-String moduleName;
-String sqlQuery;
+@WebServlet(name = "ListHandins", urlPatterns = {"/Teacher/Handins/ListHandins"})
+public class ListHandins extends HttpServlet {
 Connection conn = null;
 Statement stmt = null;
 ResultSet rs = null;
-String gDesc;
+String handinText;
+String dateDelivered;
+String moduleName;
+String userName;
+String sqlQuery;
+String fName;
+String lName;
+boolean hiApproved;
+String isApproved;
+int hiPoints;
+int hiId;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,33 +52,47 @@ String gDesc;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-                moduleID = request.getParameter("MID");
-                moduleName = request.getParameter("mName");
-                sqlQuery = "SELECT lg_string FROM LEARNINGGOAL, MODULE WHERE fk_m_id = " + moduleID + " GROUP BY lg_id;";
-            
-                out.println("<!DOCTYPE html>");
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ModuleInspector</title>");            
+            out.println("<title>Servlet ListHandins</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Alle læremål for " + moduleName + "</h1>");
-            
+            out.println("<h1>Servlet ListHandins at " + request.getContextPath() + "</h1>");
             try {
+                sqlQuery = "SELECT hi_id, u_fname, u_lname, m_name, hi_date, hi_approved, hi_comment, hi_points FROM user, handin, module WHERE handin.fk_u_id = user.u_id and handin.fk_m_id = module.m_id GROUP BY hi_id ORDER BY hi_date DESC;";
                 conn = DbUtil.ConnectionManager.getConnection();
                 stmt = conn.createStatement();
                 rs = stmt.executeQuery(sqlQuery);
-                PrintWriter sqlwriter = response.getWriter();
-                while (rs.next()) 
-                    {
-                    gDesc = rs.getString("lg_string");
-                    sqlwriter.println("<li>" + gDesc);
-                    }
-                } 
-                    catch(SQLException sex) {
-                    out.println("Det skjedde en feil med databasen: " + sex);
-                    }
-            out.println("<a href=AllModules.jsp>Tilbake</a>");
+                while (rs.next()) {
+                    fName = rs.getString("u_fname");
+                    lName = rs.getString("u_lname");
+                    userName = fName + " " + lName;
+                    moduleName = rs.getString("m_name");
+                    dateDelivered = rs.getString("hi_date");
+                    hiApproved = rs.getBoolean("hi_approved");
+                        if (hiApproved) { 
+                            isApproved = "Ja";
+                            } else { isApproved = "Nei"; }
+                    handinText = rs.getString("hi_comment");
+                    hiPoints = rs.getInt("hi_points");
+                    hiId = rs.getInt("hi_id");
+                    
+                    out.format("<li>Modul: %s<br>Navn: %s<br>Levert: %s", moduleName, userName, dateDelivered);
+                    out.format("<br>Poeng: %s  Godkjent: %s <br>Kommentar: %s", hiPoints, isApproved, handinText);
+                    out.format("<form method=\"post\" action=\"Inspector.jsp?HID=%s\">", hiId);
+                    out.println("<br><input type=\"submit\" value=\"Åpne\">");
+                    out.println("</form>");
+                    out.println("<form method=\"post\" action=\"Grader\">");
+                    out.format("<input type=\"hidden\" name=\"HID\" value=\"%s\">", hiId);
+                    out.println("<input type=\"hidden\" name=\"approved\" value=\"true\">");
+                    out.println("<input type=\"submit\" value=\"Godkjenn\">");
+                    out.format("<input type=\"hidden\" name=\"HID\" value=\"%s\">", hiId);
+                    out.println("<input type=\"hidden\" name=\"approved\" value=\"false\">");
+                    out.println("<input type=\"submit\" value=\"Avvis\">");
+                }
+            } catch (SQLException ex) 
+            { out.println("Det skjedde en feil med databasen: " + ex); }
             out.println("</body>");
             out.println("</html>");
         }
