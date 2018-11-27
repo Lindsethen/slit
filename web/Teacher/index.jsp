@@ -58,7 +58,7 @@ and open the template in the editor.
             &nbsp;
             &nbsp;
             &nbsp;
-            <a href="Users" class = "text-white">Studenter</a>
+            <a href="Users" class = "text-white">Brukere</a>
             &nbsp;
             &nbsp;
             &nbsp;
