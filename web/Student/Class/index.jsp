@@ -43,15 +43,6 @@ and open the template in the editor.
         <div class="jumbotron">
 
         <a href="ClassMembers.jsp" class="text-white">Klassemedlemmer</a>
-            &nbsp;
-            &nbsp;
-        <a href="UserReg.html"class="text-white">Link 2</a>
-            &nbsp;
-            &nbsp;
-        <a href="UserDelete.html" class="text-white">Link 3</a>
-            &nbsp;
-            &nbsp;
-        <a href="EditUser.html"class="text-white">Link 4</a>
         <br>
         <br>
         <br>
