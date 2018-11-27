@@ -49,7 +49,7 @@
     }
             catch (Exception e)
             {
-              System.err.println("Got an exception!");
+              System.err.println("Det oppstod en feil!");
               System.err.println(e.getMessage());
             }
             %>
