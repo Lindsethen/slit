@@ -33,7 +33,7 @@ public class NewLearningServlet extends HttpServlet {
             //Gjør om string til int
             m_id = Integer.parseInt(moduleString);
             //Printer pynt
-            out.print("Data retrieved about: " + lg_string +"!");
+            out.print("Læringsmål ble lag til i modul: " + m_id +"!");
             out.print("<br>");
             out.print("Svar fra MySQLdriver: ");
             out.print("<h6>(JDBC driver)</h6>");
