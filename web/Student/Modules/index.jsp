@@ -41,7 +41,7 @@ and open the template in the editor.
         
         <div class="jumbotron">
             
-        <a href="../AllModules.jsp" class ="text-white">Liste av moduler</a>
+        <a href="../../../../AllModules.jsp" class ="text-white">Liste av moduler</a>
         
         </div>
     </body>
