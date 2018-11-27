@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : UploadHandin
     Created on : 26.nov.2018, 12:31:12
     Author     : Henrik
@@ -41,37 +41,40 @@
 </head>
 <body>
     <center>
-        
+
         <div class="container">
         <h1>Filopplastning for modul</h1>
         </div>
-       
+
         <div class="jumbotron">
             <div class="container">
-        <form method="post" action="../../UploadHandin" enctype="multipart/form-data">
+        <form method="post" action="../../UploadHandin.java" enctype="multipart/form-data">
             <table border="0">
                 <tr>
                     <td>Student: </td>
                     <td><input type="text-white" name="studentName" size="50"/></td>
                 </tr>
                 <tr>
-                    <td>Module: </td>
+                    <td>Modul: </td>
                     <td><input type="text" name="moduleNumber" size="50"/></td>
                 </tr>
                 <tr>
-                    <td>:Upload </td>
+                    <td>Opplastning: </td>
                     <td><input type="file" name="handinHere" size="50"/></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                <br>    
-                    <input type="submit" value="Save">
-                    <br>
-                    <br>
-                     <a href="../index.jsp" class="text-white">Tilbake til index</a>
+                        <input type="submit" value="Last opp">
                     </td>
                 </tr>
             </table>
+        </form>
+                <a href="../index.jsp" class="text-black">Tilbake til forsiden</a>
+
+        <form action="../../LogoutServlet">
+
+              <input type="submit" value="Logg ut">
+
         </form>
             </div>
         </div>

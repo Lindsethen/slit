@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -28,30 +29,33 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
-        <title>Læremål</title>
+
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="container">
-        <h1>Læremål</h1>
-        </div>
-        <br>
-        <div class="jumbotron">
-                    <a href="LearningGoalReg.html" class = "text-white">Legg til læremål</a>
-                    &nbsp;
-                    &nbsp;
-                    <a href="AllGoals.jsp" class = "text-white">List alle læremål</a>
-                    &nbsp;
-                    &nbsp;
-                    <a href="EditLearningGoal.html" class ="text-white">Rediger læremål</a>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <a href="../index.jsp" class="text-white">Tilbake til index</a>
+        <h1>Klasse i Kurs IS-109 & IS-110</h1>
+        <h3>Liste av studenter med kontaktinformasjon</h3>
         </div>
 
+        <div class="jumbotron">
+
+        <a href="ClassMembers.jsp" class="text-white">Klassemedlemmer</a>
+        <br>
+        <br>
+
+        </div>
+        <a href="../index.jsp" class="text-black">Tilbake til forsiden</a>
+        <form action="../../LogoutServlet">
+
+            <input type="submit" value="Logg ut">
+
+        </form>
+
     </body>
+
 
   <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

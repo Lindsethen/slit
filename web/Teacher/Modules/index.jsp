@@ -1,4 +1,4 @@
-<!DOCTYPE jsp>
+<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -30,31 +30,34 @@ and open the template in the editor.
     margin-bottom: 0;
 }
 </style>
-        <title>Module index</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="container">
-        <h1>Innleveringer</h1>
+        <h1>Moduler</h1>
         </div>
 
         <div class="jumbotron">
 
-        <a href="ModuleReg.jsp" class ="text-white">Rediger moduler</a>
+        <a href="ModuleReg.jsp" class ="text-white">Registrer ny modul</a>
             &nbsp;
             &nbsp;
-        <a href="DeleteModule.jsp" class ="text-white">Slett moduler</a>
+        <a href="../../ListModules" class ="text-white">Liste av moduler</a>
             &nbsp;
             &nbsp;
-        <a href="AllModules.jsp" class="text-white">List alle moduler</a
+        <a href="../../DeleteModule.html" class ="text-white">Slett modul</a>
+            &nbsp;
+            &nbsp;
+        <a href="../../EditModuleServlet" class ="text-white">Endre modul</a>
         <br>
         <br>
         <br>
         <br>
+        <a href="../index.jsp" class = "text-white">Tilbake til forsiden</a>
 
-        <a href="../index.jsp" class="text-white">Tilbake til index</a>
-        
+
         </div>
     </body>
 
