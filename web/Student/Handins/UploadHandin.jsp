@@ -69,15 +69,20 @@
                 </tr>
             </table>
         </form>
-                <a href="../index.jsp" class="text-black">Tilbake til forsiden</a>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
 
         <form action="../../LogoutServlet">
 
               <input type="submit" value="Logg ut">
 
         </form>
-            </div>
         </div>
+            </div>
     </center>
 </body>
 

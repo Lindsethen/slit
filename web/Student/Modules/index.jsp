@@ -41,11 +41,15 @@ and open the template in the editor.
 
         <div class="jumbotron">
 
-        <a href="../../../../AllModules.jsp" class ="text-white">Liste av moduler</a>
-
+        <a href="AllModules.jsp" class ="text-white">Liste av tilgjengelige moduler</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
         </div>
     </body>
-    <a href="../index.jsp" class="text-black">Tilbake til forsiden</a>
+
     <form action="../../LogoutServlet">
 
               <input type="submit" value="Logg ut">
