@@ -61,5 +61,8 @@
               System.err.println(e.getMessage());
             }
         %>
+    
+ <a href="../index.jsp" class="text-white">Tilbake til index</a>
+    
     </body>
 </html>

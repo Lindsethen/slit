@@ -48,7 +48,7 @@
        
         <div class="jumbotron">
             <div class="container">
-        <form method="post" action="../../UploadHandin.java" enctype="multipart/form-data">
+        <form method="post" action="../../UploadHandin" enctype="multipart/form-data">
             <table border="0">
                 <tr>
                     <td>Student: </td>
@@ -64,7 +64,11 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Save">
+                <br>    
+                    <input type="submit" value="Save">
+                    <br>
+                    <br>
+                     <a href="../index.jsp" class="text-white">Tilbake til index</a>
                     </td>
                 </tr>
             </table>

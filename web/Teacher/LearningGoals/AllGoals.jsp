@@ -4,6 +4,7 @@
     Author     : Ludamac
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection,DbUtil.ConnectionManager,java.sql.Statement,java.sql.ResultSet,java.io.IOException,java.io.PrintWriter" %>
 <!DOCTYPE html>
@@ -58,6 +59,6 @@
             }
             %>
             </ul>
-    
+    <a href="../index.jsp" class="text-white">Tilbake til index</a>
     </body>
 </html>
