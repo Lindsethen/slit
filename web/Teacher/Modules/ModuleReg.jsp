@@ -41,9 +41,10 @@ and open the template in the editor.
 <div class="jumbotron">
 
 <form action="../../NewModuleServlet" method="post">
-    <input type="text" name="UID" placeholder="Modulnamn">
+    <input type="text" name="UID" placeholder="Modulnavn">
     <br>
     <input type="text" name="MDesc" placeholder="Modulbeskrivelse">
+    <br>
     <br>
     <input type="submit" value="Legg til">
         <br>
@@ -51,7 +52,7 @@ and open the template in the editor.
         <br>
         <br>
 
-        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
+        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>>
     
 </div>
 
