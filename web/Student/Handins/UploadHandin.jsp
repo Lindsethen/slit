@@ -70,7 +70,7 @@
             </table>
         </form>
                 
-    <form action="../../LogoutServlet">
+        <form action="../../LogoutServlet">
 
               <input type="submit" value="Logout">
 
