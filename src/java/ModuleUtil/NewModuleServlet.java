@@ -33,13 +33,14 @@ public class NewModuleServlet extends HttpServlet {
             String mPublished;
             
             //Henter info fra forrige side
+            //Gjør om string til int
             moduleId = request.getParameter("moduleId");
             mId = Integer.parseInt(moduleId);
             mName = request.getParameter("mName");
             mDesc = request.getParameter("mDesc");
             mDeadline = request.getParameter("mDeadline");
             mPublished = request.getParameter("mPublished");
-            //Gjør om string til int
+            
 
 
             
