@@ -62,8 +62,5 @@
             }
         %>
         
-        <h4>
-    <a href="../../index.jsp">Back to index</a>
-    </h4>
     </body>
 </html>
