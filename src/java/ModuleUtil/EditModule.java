@@ -19,10 +19,10 @@ public class EditModule {
     String newName;
     String newDescription;
     String newDeadline;
-    int moduleID;
+    String moduleID;
     boolean isPublished;
    
-    public void changeID(int newNum, int mID){
+    public void changeID(int newNum, String mID){
         number = newNum;
         moduleID = mID;
         
@@ -40,7 +40,7 @@ public class EditModule {
             }
         }
     
-    public void changeName(String nameString, int mID){
+    public void changeName(String nameString, String mID){
         
         newName = nameString;
         moduleID = mID;
@@ -58,7 +58,7 @@ public class EditModule {
         }
         
     }
-    public void changeDescription(String descriptionString, int mID){
+    public void changeDescription(String descriptionString, String mID){
         newDescription = descriptionString;
         moduleID = mID;
         sqlQuery = "UPDATE MODULE SET m_description = " + "\"" + newDescription + "\"" + " WHERE m_id = " + moduleID + ";";
@@ -74,7 +74,7 @@ public class EditModule {
             System.out.println(ex);
         }
     }
-    public void changeDeadline(String deadlineString, int mID){
+    public void changeDeadline(String deadlineString, String mID){
         newDeadline = deadlineString;
         moduleID = mID;
         sqlQuery = "UPDATE MODULE SET m_deadline = " + "'" + newDeadline + "'" + " WHERE m_id = " + moduleID + ";";
@@ -90,7 +90,7 @@ public class EditModule {
             System.out.println(ex);
         }
     }
-    public void changePublished(boolean published, int mID){
+    public void changePublished(boolean published, String mID){
         moduleID = mID;
         isPublished = published;
         sqlQuery = "UPDATE MODULE SET m_published = " + isPublished + " WHERE m_id = " + moduleID + ";";

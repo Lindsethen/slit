@@ -28,7 +28,7 @@ public class EditModuleServlet extends HttpServlet {
     String deadlineString;
     String nameString;
     int newNum;
-    int moduleID;
+    String moduleID;
     boolean isPublished;
     String published;
     
@@ -59,12 +59,12 @@ public class EditModuleServlet extends HttpServlet {
 
             
                     //Henter info fra EditModule siden
-            moduleID = request.getIntHeader("MID");
+            moduleID = request.getParameter("MID");
             descriptionString = request.getParameter("descriptionString");
             deadlineString = request.getParameter("deadlineString");
             nameString = request.getParameter("nameString");
             moduleString = request.getParameter("newNum");
-            newNum = Integer.parseInt(moduleString);
+            //newNum = Integer.parseInt(moduleString);
             published = request.getParameter("published");
                 EditModule em = new EditModule();
                 //sjekker om published har en verdi og endrer published om den har en verdi
@@ -75,11 +75,11 @@ public class EditModuleServlet extends HttpServlet {
                             (isPublished)=false;}
                             em.changePublished(isPublished, moduleID);
                     }
-                if (moduleString != null) {
+                if (!"null".equals(moduleString)) {
                 em.changeID(newNum, moduleID); }
-                if (descriptionString != null) {
+                if (!"null".equals(descriptionString)) {
                 em.changeDescription(descriptionString, moduleID); }
-                if (deadlineString != null) {
+                if (!"null".equals(deadlineString)) {
                 em.changeDeadline(deadlineString, moduleID); }
                 if (nameString != null) {
                 em.changeName(nameString, moduleID); }

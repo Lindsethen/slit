@@ -14,7 +14,7 @@ public class ConnectionManager {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             try {
                 con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/slit", "slit", "verystrong");
+                        "jdbc:mysql://localhost:3306/slit?useSSL=false", "slit", "verystrong");
             } catch (SQLException ex) {
                 // log an exception. fro example:
                 System.out.println("Failed to create the database connection.");

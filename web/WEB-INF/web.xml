@@ -114,7 +114,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteModuleServlet</servlet-name>
-        <url-pattern>/DeleteModuleServlet</url-pattern>
+        <url-pattern>/Teacher/Modules/DeleteModuleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteGoalsServlet</servlet-name>
