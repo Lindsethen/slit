@@ -55,24 +55,25 @@
                     <td><input type="text-white" name="studentName" size="50"/></td>
                 </tr>
                 <tr>
-                    <td>Module: </td>
+                    <td>Modul: </td>
                     <td><input type="text" name="moduleNumber" size="50"/></td>
                 </tr>
                 <tr>
-                    <td>:Upload </td>
+                    <td>Opplastning: </td>
                     <td><input type="file" name="handinHere" size="50"/></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Save">
+                        <input type="submit" value="Last opp">
                     </td>
                 </tr>
             </table>
         </form>
+                <a href="../index.jsp" class="text-black">Tilbake til forsiden</a>
                 
         <form action="../../LogoutServlet">
 
-              <input type="submit" value="Logout">
+              <input type="submit" value="Logg ut">
 
         </form>            
             </div>
