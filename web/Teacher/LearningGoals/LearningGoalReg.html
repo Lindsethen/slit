@@ -36,6 +36,22 @@ and open the template in the editor.
     <div class="container">
 <h1>Skriv læremål</h1>
     </div>
+<br>
+<div class="jumbotron">
+<form action="../NewLearninGoalServlet" method="post">
+    <input type="text" name="lgNum" placeholder="Learning goal number">
+    <br>
+    <input type="text" name="lgName" placeholder="Learning goal name">
+    <br>
+    <input type="text" name="lgDesc" placeholder="Learning goal description">
+    <br>
+    <input type="submit" value="submit">
+    <br>
+    <br>
+    <br>
+    <br>
+        <a href="../index.jsp" class="text-white">Tilbake til forsiden</a>
+</div>
 
     <div class="jumbotron">
             <form action="../NewLearninGoalServlet" method="post">
@@ -49,7 +65,7 @@ and open the template in the editor.
                 <br>
             </form>
 
-                <a href="../../index.jsp" class="text-white">Tilbake til forsiden</a>  
+                <a href="../../index.jsp" class="text-white">Tilbake til forsiden</a>
     </div>
         <form action="../../LogoutServlet">
 

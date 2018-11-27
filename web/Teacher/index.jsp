@@ -62,7 +62,7 @@ and open the template in the editor.
             &nbsp;
             &nbsp;
             &nbsp;
-            <a href="Handins" class = "text-white">Innleveringer</a>
+            <a href="../OverviewServlet" class = "text-white">Innleveringer</a>
 
         </div>
         
