@@ -14,7 +14,7 @@
         <title>Alle læremål</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Alle læremål</h1>
         <% 
         Connection conn = null;
         Statement stmt = null;
@@ -39,7 +39,7 @@
           String moduleName = rs.getString("m_name");
           int mID = rs.getInt("m_id");
           // kjøres for hver row med følgende format:
-          sqlWriter.format("<li>Number:%s </br> Description: %s", id, lgString);
+          sqlWriter.format("<li>Number:%s </br> Description: %s <br> Koblet til modulen: %s", id, lgString, moduleName);
           sqlWriter.format("<br><form method=\"post\" action=\"DeleteGoalsServlet?UID=" + id +"\">");
           sqlWriter.println("<input type=\"submit\" value=\"SLETT LÆREMÅL\">");
           sqlWriter.println("</form>");
