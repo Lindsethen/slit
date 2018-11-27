@@ -54,11 +54,9 @@
             <p class="text-white">Skriv inn passord: </p> <input type="password" name="pass"> 
             <br>
             <br>
-            <input type="submit" value="Logg inn">
-            
+            <input type="submit" value="Logg inn">    
         </form>
             </div>
-    
     </body>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
