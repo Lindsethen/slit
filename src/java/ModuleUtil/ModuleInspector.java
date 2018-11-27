@@ -43,29 +43,32 @@ String gDesc;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            moduleID = request.getParameter("MID");
-            moduleName = request.getParameter("mName");
-            sqlQuery = "SELECT lg_string FROM LEARNINGGOAL, MODULE WHERE fk_m_id = " + moduleID + " GROUP BY lg_id;";
-            out.println("<!DOCTYPE html>");
+                moduleID = request.getParameter("MID");
+                moduleName = request.getParameter("mName");
+                sqlQuery = "SELECT lg_string FROM LEARNINGGOAL, MODULE WHERE fk_m_id = " + moduleID + " GROUP BY lg_id;";
+            
+                out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet ModuleInspector</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Alle læremål for " + moduleName + "</h1>");
+            
             try {
                 conn = DbUtil.ConnectionManager.getConnection();
                 stmt = conn.createStatement();
                 rs = stmt.executeQuery(sqlQuery);
                 PrintWriter sqlwriter = response.getWriter();
-                while (rs.next()) {
+                while (rs.next()) 
+                    {
                     gDesc = rs.getString("lg_string");
                     sqlwriter.println("<li>" + gDesc);
-                }
-                 
-                } catch(SQLException sex) {
+                    }
+                } 
+                    catch(SQLException sex) {
                     out.println("Det skjedde en feil med databasen: " + sex);
-            }
+                    }
             out.println("<a href=AllModules.jsp>Tilbake</a>");
             out.println("</body>");
             out.println("</html>");
