@@ -66,6 +66,9 @@
                     <td colspan="2">
                 <br>    
                     <input type="submit" value="Save">
+                    <br>
+                    <br>
+                     <a href="../index.jsp" class="text-white">Tilbake til index</a>
                     </td>
                 </tr>
             </table>
