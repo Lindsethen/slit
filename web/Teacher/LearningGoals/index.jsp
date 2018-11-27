@@ -43,7 +43,6 @@ and open the template in the editor.
                     <a href="AllGoals.jsp" class = "text-white">List alle læremål</a>
                     &nbsp;
                     &nbsp;
-                    <a href="EditLearningGoal.html" class ="text-white">Rediger læremål</a>
                     <br>
                     <br>
                     <br>
