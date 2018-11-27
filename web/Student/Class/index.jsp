@@ -36,8 +36,8 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container">
-        <h1>Studenter-PLACEHOLDER</h1>
-        <h3>Liste av studenter med kontaktinformasjon osv</h3>
+        <h1>Klasse i Kurs IS-109 & IS-110</h1>
+        <h3>Liste av studenter med kontaktinformasjon</h3>
         </div>
 
         <div class="jumbotron">
@@ -45,10 +45,8 @@ and open the template in the editor.
         <a href="ClassMembers.jsp" class="text-white">Klassemedlemmer</a>
         <br>
         <br>
-        <br>
-        <br>
 
-        <a href="../index.jsp" class="text-white">Back to index</a>
+        <a href="../index.jsp" class="text-white">Tilbake til forside</a>
       
         </div>
         
