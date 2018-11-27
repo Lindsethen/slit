@@ -47,6 +47,7 @@ and open the template in the editor.
         <a href="DeleteModule.jsp" class ="text-white">Slett moduler</a>
         <br>
         <br>
+        <a href="AllModules.jsp" class="text-white">List alle moduler</a
         <br>
         <br>
 
