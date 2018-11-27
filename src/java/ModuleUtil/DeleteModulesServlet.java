@@ -46,7 +46,7 @@ int ModuleID;
             out.println("</head>");
             out.println("<body>");
             out.println("Slettet modul nummer " +idString);
-            out.println("<h1>Servlet DeleteModulesServlet at " + request.getContextPath() + "</h1>");
+            out.println("<br>Servlet DeleteModulesServlet at " + request.getContextPath() + "</br>");
             out.println("</body>");
             out.println("</html>");
         }
