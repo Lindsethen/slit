@@ -70,7 +70,7 @@ and open the template in the editor.
               
               <input type="submit" value="Logout">
           
-            </form>           
+            </form>
         
     </body>
 
