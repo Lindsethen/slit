@@ -13,38 +13,38 @@ import java.sql.*;
 public class EditGoal {
         private Connection conn = null;
         private Statement stmt = null;
-        String newName;
-        String newString;
+        String newText;
         String sqlQuery;
-        int goalID;
+        int gID;
+        int mID;
 
-public void changeGoalname(String nameString, int goalID){
-    newName = nameString;
-    goalID = this.goalID;
-    sqlQuery = "UPDATE LEARNINGGOAL SET lg_name = " + newName + "WHERE lg_id = " + goalID;
-    try{
-        conn = DbUtil.ConnectionManager.getConnection();
-        stmt = conn.createStatement();
-        stmt.executeUpdate(sqlQuery);
+    public void changeModule(int moduleID, int goalID){
+        mID = moduleID;
+        gID = goalID;
+        sqlQuery = "UPDATE LEARNINGGOAL SET fk_m_id = " + mID + " WHERE lg_id = " + gID + ";";
+        try{
+            conn = DbUtil.ConnectionManager.getConnection();
+            stmt = conn.createStatement();
+            stmt.executeUpdate(sqlQuery);
+            }
+            catch (SQLException ex){
+                System.out.println("Det er noe som ikke stemmer her :(");
+                System.out.println(ex);
+            }
     }
-    catch (SQLException ex){
-        System.out.println("Det er noe som ikke stemmer her :(");
-        System.out.println(ex);
+    public void changeGoaltext(String goalText, int goalID){
+        //newText = goalText;
+        gID = goalID;
+        sqlQuery = "UPDATE LEARNINGGOAL SET lg_string = \"" + goalText + "\" WHERE lg_id = " + gID + ";";
+        try{
+            conn = DbUtil.ConnectionManager.getConnection();
+            stmt = conn.createStatement();
+            stmt.executeUpdate(sqlQuery);
+            }
+            catch (SQLException ex){
+                System.out.println("Det er noe som ikke stemmer her :(");
+                System.out.println(ex);
+            }
     }
-}
-public void changeGoalstring(String stringString, int goalID){
-    newString = stringString;
-    goalID = this.goalID;
-    sqlQuery = "UPDATE LEARNINGGOAL SET lg_string = " + newString + "WHERE lg_id = " + goalID;
-    try{
-        conn = DbUtil.ConnectionManager.getConnection();
-        stmt = conn.createStatement();
-        stmt.executeUpdate(sqlQuery);
-    }
-    catch (SQLException ex){
-        System.out.println("Det er noe som ikke stemmer her :(");
-        System.out.println(ex);
-    }
-}
 
 }

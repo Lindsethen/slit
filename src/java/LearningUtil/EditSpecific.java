@@ -7,29 +7,32 @@ package LearningUtil;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.SQLException;
 
 /**
  *
  * @author Ludamac
  */
-public class EditGoalServlet extends HttpServlet {
+public class EditSpecific extends HttpServlet {
+    int goalID;
+    String goalName;
+    int moduleFK;
+    String goalText;
+    String idString;
     Connection conn = null;
     Statement stmt = null;
     ResultSet rs = null;
-    String idString;
-    String goalText;
-    String moduleString;
-    int moduleID;
-    int goalID;
-  
-
+    String getQuery = null;
+    String setQuery = null;
+    String moduleName;
+    String moduleID;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -44,39 +47,42 @@ public class EditGoalServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            idString = request.getParameter("GID");
+            moduleID = request.getParameter("moduleID");
+            getQuery = "SELECT * FROM LEARNINGGOAL, MODULE WHERE m_id = " + moduleID + " and lg_id = " + idString;
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EditGoalServlet</title>");            
+            out.println("<title>Servlet EditSpecific</title>");            
             out.println("</head>");
             out.println("<body>");
-            try{
-
-                
-                //Henter info fra forrige side
-                idString = request.getParameter("GID");
-                moduleString = request.getParameter("moduleID");
-                goalText = request.getParameter("goalText");
-                
-                goalID = Integer.parseInt(idString);
-                moduleID = Integer.parseInt(moduleString);
-                
-                EditGoal eg = new EditGoal();
-                eg.changeGoaltext(goalText, goalID);
-                eg.changeModule(moduleID, goalID);
-                out.println("<br>Endret nummer " + idString + " sin beskrivelse til: " + goalText);
-            }
-                catch (Exception e){
-                
-                System.out.println("Noe gikk galt.");
-                System.out.println(e);
-            }
-            
-            out.println("<br><a href=../../Teacher/LearningGoals/AllGoals.jsp>Tilbake til læremål</a>");
+            try  {
+                conn = DbUtil.ConnectionManager.getConnection();
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(getQuery);
+                rs.next();
+                moduleName = rs.getString("m_name");
+                goalText = rs.getString("lg_string");
+                PrintWriter htmlout = response.getWriter();
+                htmlout.println("<h3>Registrert som:</h3>");
+                htmlout.println("Nummer: " + idString);
+                htmlout.println("<br>Modulnavn: " + moduleName);
+                htmlout.println("<br>Beskrivelse: " + goalText);
+                htmlout.println("<br>Modulnummer: " + moduleID);
+                } 
+                catch (SQLException ex) {
+                out.println("Feil med tilkobling: " + ex); }
+            out.println("<form action=\"../../EditGoalServlet\" method=\"post\">");
+            out.println("<input type=\"text\" name=\"goalText\" placeholder=\"Beskrivelse\">");
+            out.println("<br> <input type=\"text\" name=\"moduleID\" placeholder=\"Modulnummer\">");
+            out.println("<input type=\"hidden\" name=\"GID\" value=\"" + idString + "\">");
+            out.println("<br> <input type=\"submit\" value=\"ENDRE\"");
             out.println("</body>");
             out.println("</html>");
+            }
         }
-    }
+        
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

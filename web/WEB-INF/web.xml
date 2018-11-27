@@ -76,6 +76,10 @@
         <servlet-name>UploadHandin</servlet-name>
         <servlet-class>Handinutil.UploadHandin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditSpecific</servlet-name>
+        <servlet-class>LearningUtil.EditSpecific</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/RegisterUserServlet</url-pattern>
@@ -147,6 +151,10 @@
     <servlet-mapping>
         <servlet-name>UploadHandin</servlet-name>
         <url-pattern>/UploadHandin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSpecific</servlet-name>
+        <url-pattern>/Teacher/LearningGoals/EditSpecific</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

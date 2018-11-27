@@ -18,7 +18,7 @@
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-        String query = "SELECT * FROM LEARNINGGOAL ORDER BY lg_id ASC;";
+        String query = "SELECT lg_id, m_name, m_id, lg_string FROM LEARNINGGOAL RIGHT JOIN MODULE on m_id = fk_m_id;";
         //connect til db
     try {
         conn = DbUtil.ConnectionManager.getConnection();
@@ -34,12 +34,16 @@
           PrintWriter sqlWriter = response.getWriter();
           //hvilke columns som skal kalles hva (SQL -> Java)
           int id = rs.getInt("lg_id");
-          //String lgName = rs.getString("lg_name");
           String lgString = rs.getString("lg_string");
+          String moduleName = rs.getString("m_name");
+          int mID = rs.getInt("m_id");
           // kjøres for hver row med følgende format:
           sqlWriter.format("<li>Number:%s </br> Description: %s", id, lgString);
           sqlWriter.format("<br><form method=\"post\" action=\"DeleteGoalsServlet?UID=" + id +"\">");
           sqlWriter.println("<input type=\"submit\" value=\"SLETT LÆREMÅL\">");
+          sqlWriter.println("</form>");
+          sqlWriter.format("<form method=\"post\" action=\"EditSpecific?GID=%s&moduleID=%s\">", id, mID);
+          sqlWriter.println("<input type=\"submit\" value=\"Rediger\">");
           sqlWriter.println("</form>");
         }
          //lukker tilkoblingen
